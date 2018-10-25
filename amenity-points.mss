@@ -75,6 +75,13 @@
     marker-placement: interior;
     marker-clip: false;
   }
+  
+  [feature = 'amenity_internet_cafe'][zoom >= 17] {
+    marker-file: url('symbols/amenity/internet_cafe.svg');
+    marker-fill: @amenity-brown;
+    marker-placement: interior;
+    marker-clip: false;
+  }
 
   [feature = 'amenity_bar'][zoom >= 17],
   [feature = 'amenity_biergarten'][zoom >= 17],
@@ -1583,6 +1590,8 @@
   [feature = 'barrier_lift_gate'][zoom >= 17]::barrier,
   [feature = 'barrier_swing_gate'][zoom >= 17]::barrier {
     marker-file: url('symbols/barrier/lift_gate.svg');
+<<<<<<< HEAD
+=======
     marker-fill: #3f3f3f;
     marker-placement: interior;
     marker-clip: false;
@@ -1590,11 +1599,22 @@
 
   [feature = 'barrier_cattle_grid'][zoom >= 17]::barrier {
     marker-file: url('symbols/barrier/cattle_grid.svg');
+>>>>>>> f7aadb7... add radio telescope code to amenity and project, icon to symbols
     marker-fill: #3f3f3f;
     marker-placement: interior;
     marker-clip: false;
   }
 
+<<<<<<< HEAD
+  [feature = 'barrier_cattle_grid'][zoom >= 17]::barrier {
+    marker-file: url('symbols/barrier/cattle_grid.svg');
+    marker-fill: #3f3f3f;
+    marker-placement: interior;
+    marker-clip: false;
+  }
+
+=======
+>>>>>>> f7aadb7... add radio telescope code to amenity and project, icon to symbols
   [feature = 'barrier_stile'][zoom >= 17]::barrier {
     marker-file: url('symbols/barrier/stile.svg');
     marker-fill: #3f3f3f;
@@ -1959,8 +1979,12 @@
   [feature = 'man_made_storage_tank'][zoom >= 18],
   [feature = 'man_made_silo'][zoom >= 18],
   [feature = 'man_made_communications_tower'][zoom >= 17],
+<<<<<<< HEAD
   [feature = 'man_made_telescope']["telescope:type" != 'optical']["telescope:type" != null][zoom >= 16],
   [feature = 'man_made_telescope'][zoom >= 17],
+=======
+  [feature = 'man_made_telescope']["telescope:type" = 'radio'][zoom >= 17],
+>>>>>>> f7aadb7... add radio telescope code to amenity and project, icon to symbols
   [feature = 'man_made_water_tower'][zoom >= 17],
   [feature = 'man_made_water_well'][zoom >= 18],
   [feature = 'man_made_chimney'][zoom >= 17],
@@ -1984,7 +2008,11 @@
     [feature = 'man_made_mast'],
     [feature = 'man_made_tower'],
     [feature = 'man_made_communications_tower'],
+<<<<<<< HEAD
     [feature = 'man_made_telescope'],
+=======
+    [feature = 'man_made_telescope']["telescope:type" = 'radio'],
+>>>>>>> f7aadb7... add radio telescope code to amenity and project, icon to symbols
     [feature = 'man_made_water_tower'],
     [feature = 'man_made_storage_tank'],
     [feature = 'man_made_silo'],
