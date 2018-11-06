@@ -87,10 +87,6 @@
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @gastronomy;
-    [feature != 'amenity_food_court'][zoom = 17] {
-      marker-width: 4;
-      marker-line-width: 0;
-    }
     [feature = 'amenity_bar'][zoom >= 17] {
       marker-file: url('symbols/amenity/bar.svg');
     }
@@ -925,11 +921,6 @@
       marker-placement: interior;
       marker-clip: false;
       marker-fill: @shop-icon;
-    }
-
-    [zoom >= 17][zoom < 19][shop != 'supermarket'][shop != 'department_store'][shop != 'mall'][shop != 'massage'] {
-      marker-width: 4;
-      marker-line-width: 0;
     }
 
     [shop = 'other'][zoom >= 17] {
