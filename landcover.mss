@@ -22,8 +22,8 @@
 @industrial-line: #c6b3c3;  // Lch(75,11,330) (Also used for railway-line, wastewater_plant-line)
 @farmland: #eef0d5;         // Lch(94,14,112)
 @farmland-line: #c7c9ae;    // Lch(80,14,112)
-@farmyard: #f5dcba;         // Lch(89,20,80)
-@farmyard-line: #d1b48c;    // Lch(75,25,80)
+@farmyard: @residential;         // Lch(89,0,0)
+@farmyard-line: @residential-line;    // Lch(75,0,0)
 
 // --- Transport ----
 
@@ -45,7 +45,7 @@
 @construction: #c7c7b4; // also brownfield
 @heath: #d6d99f;
 @mud: rgba(203,177,154,0.3); // produces #e6dcd1 over @land
-@place_of_worship: #f2ecd9; // also landuse_religious
+@place_of_worship: #fdebd8; // also landuse_religious
 @place_of_worship_outline: saturate(darken(@place_of_worship, 30%), 20%);
 @leisure: lighten(@park, 5%);
 @power: darken(@industrial, 5%);
