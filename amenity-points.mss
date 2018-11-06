@@ -906,7 +906,7 @@
     marker-clip: false;
   }
 
-  [feature = 'amenity_marketplace'][zoom >= 16][way_pixels > 3000],
+  [feature = 'amenity_marketplace'][zoom >= 16][way_pixels > 900],
   [feature = 'amenity_marketplace'][zoom >= 17] {
     marker-placement: interior;
     marker-clip: false;
@@ -923,8 +923,13 @@
       marker-fill: @shop-icon;
     }
 
-    [shop = 'other'][zoom >= 17] {
-      marker-width: 6;
+    [zoom >= 17][zoom < 18][shop != 'supermarket'][shop != 'department_store'][shop != 'mall'] {
+      marker-width: 4;
+      marker-line-width: 0;
+    }
+
+    [shop = 'other'][zoom >= 18] {
+      marker-width: 4;
       marker-line-width: 0;
     }
 
