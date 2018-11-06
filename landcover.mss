@@ -45,8 +45,8 @@
 @construction: #c7c7b4; // also brownfield
 @heath: #d6d99f;
 @mud: rgba(203,177,154,0.3); // produces #e6dcd1 over @land
-@place_of_worship: #d0d0d0; // also landuse_religious
-@place_of_worship_outline: darken(@place_of_worship, 30%);
+@place_of_worship: #f2ecd9; // also landuse_religious
+@place_of_worship_outline: saturate(darken(@place_of_worship, 30%), 20%);
 @leisure: lighten(@park, 5%);
 @power: darken(@industrial, 5%);
 @power-line: darken(@industrial-line, 5%);
@@ -108,10 +108,8 @@
   [feature = 'leisure_playground'][zoom >= 13],
   [feature = 'leisure_fitness_station'][zoom >= 13] {
     polygon-fill: @leisure;
-    [zoom >= 15] {
-      line-color: darken(@leisure, 60%);
-      line-width: 0.3;
-    }
+    line-color: darken(@leisure, 60%);
+    line-width: 0.3;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
