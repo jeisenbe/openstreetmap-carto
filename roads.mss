@@ -7,7 +7,7 @@
 @pedestrian-fill: #dddde8;
 @raceway-fill: pink;
 @road-fill: #ddd;
-@footway-fill: salmon;
+@footway-fill: white;
 @footway-fill-noaccess: #bbbbbb;
 @steps-fill: @footway-fill;
 @steps-fill-noaccess: #bbbbbb;
@@ -2709,11 +2709,13 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       ::fill {
         line-color: @runway-fill;
         line-width: 2;
-        [zoom >= 12] { line-width: 4; }
-        [zoom >= 13] { line-width: 6; }
-        [zoom >= 14] { line-width: 12; }
-        [zoom >= 15] { line-width: 18; }
-        [zoom >= 16] { line-width: 24; }
+        [zoom >= 12] { line-width: 2; }
+        [zoom >= 13] { line-width: 4; }
+        [zoom >= 14] { line-width: 8; }
+        [zoom >= 15] { line-width: 16; }
+        [zoom >= 16] { line-width: 32; }
+        [zoom >= 17] { line-width: 48; }
+        [zoom >= 18] { line-width: 64; }
       }
     }
   }
@@ -2731,10 +2733,13 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       ::fill {
         line-color: @taxiway-fill ;
         line-width: 1;
-        [zoom >= 13] { line-width: 2; }
-        [zoom >= 14] { line-width: 4; }
+        [zoom >= 12] { line-width: 1; }
+        [zoom >= 13] { line-width: 1.5; }
+        [zoom >= 14] { line-width: 3; }
         [zoom >= 15] { line-width: 6; }
-        [zoom >= 16] { line-width: 8; }
+        [zoom >= 16] { line-width: 12; }
+        [zoom >= 17] { line-width: 18; }
+        [zoom >= 18] { line-width: 24; }
       }
     }
   }

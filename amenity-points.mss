@@ -923,7 +923,7 @@
       marker-fill: @shop-icon;
     }
 
-    [zoom >= 17][zoom < 18][shop != 'supermarket'][shop != 'department_store'][shop != 'mall'] {
+    [zoom >= 17][zoom < 18][shop != 'supermarket'][shop != 'department_store'][shop != 'mall'][shop != 'bakery'][shop != 'books'][shop != 'butcher'][shop != 'computer'][zoom >= 17][shop != 'chemist'][shop != 'convenience'][shop != 'copyshop'][shop != 'deli'][shop != 'doityourself'][shop != 'hardware'][shop != 'dry_cleaning'][shop != 'fishmonger'][shop != 'seafood'][shop != 'garden_centre'][shop != 'greengrocer'][shop != 'farm'][zoom >= 17] {
       marker-width: 4;
       marker-line-width: 0;
     }
@@ -1400,7 +1400,7 @@
   }
 
   [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 16],
-  [feature = 'aeroway_aerodrome'][zoom >= 12][zoom < 18] {
+  [feature = 'aeroway_aerodrome'][zoom >= 12][zoom < 17] {
     marker-file: url('symbols/aerodrome.12.svg');
     marker-placement: interior;
     marker-clip: false;
