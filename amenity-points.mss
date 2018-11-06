@@ -1,24 +1,23 @@
 @marina-text: #576ddf; // also swimming_pool
 @wetland-text: darken(#4aa5fa, 25%); /* Also for marsh and mud */
-@shop-icon: #ac39ac;
-@shop-text: #939;
-@transportation-icon: #0092da;
-@transportation-text: #0066ff;
+@shop-icon: #684268;
+@shop-text: darken(@shop-icon, 20%)
+@transportation-icon: #8461C4;
+@transportation-text: darken(@transportation-icon, 10%)
 @accommodation-icon: @transportation-icon;
 @accommodation-text: @transportation-text;
-@airtransport: #8461C4; //also ferry_terminal
+@airtransport: @transportation-icon; //also ferry_terminal
 @health-color: #da0092;
 @amenity-brown: #734a08;
-@gastronomy-icon: #C77400;
-@gastronomy-text: darken(@gastronomy-icon, 5%);
+@gastronomy-icon: @amenity-brown;
 @memorials: @amenity-brown;
 @culture: @amenity-brown;
 @public-service: @amenity-brown;
-@office: #4863A0;
+@office: @man-made-icon;
 @man-made-icon: #555;
 @advertising-grey: @man-made-icon;
 @landform-color: #d08f55;
-@leisure-green: darken(@park, 60%);
+@leisure-green: @amenity-brown;
 
 @landcover-font-size: 10;
 @landcover-wrap-width-size: 30; // 3 em
@@ -1649,16 +1648,16 @@
     text-placement: interior;
   }
 
-  [feature = 'amenity_pub'][zoom >= 18],
-  [feature = 'amenity_restaurant'][zoom >= 18],
+  [feature = 'amenity_pub'][zoom >= 17],
+  [feature = 'amenity_restaurant'][zoom >= 17],
   [feature = 'amenity_food_court'][zoom >= 17],
-  [feature = 'amenity_cafe'][zoom >= 18],
-  [feature = 'amenity_fast_food'][zoom >= 18],
-  [feature = 'amenity_biergarten'][zoom >= 18],
-  [feature = 'amenity_bar'][zoom >= 18],
-  [feature = 'amenity_ice_cream'][zoom >= 18] {
+  [feature = 'amenity_cafe'][zoom >= 17],
+  [feature = 'amenity_fast_food'][zoom >= 17],
+  [feature = 'amenity_biergarten'][zoom >= 17],
+  [feature = 'amenity_bar'][zoom >= 17],
+  [feature = 'amenity_ice_cream'][zoom >= 17] {
     text-name: "[name]";
-    text-fill: @gastronomy-text;
+    text-fill: @gastronomy;
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
@@ -1769,9 +1768,9 @@
     }
   }
 
-  [feature = 'amenity_courthouse'][zoom >= 17],
-  [feature = 'amenity_townhall'][zoom >= 17],
-  [feature = 'amenity_police'][zoom >= 17],
+  [feature = 'amenity_courthouse'][zoom >= 16],
+  [feature = 'amenity_townhall'][zoom >= 16],
+  [feature = 'amenity_police'][zoom >= 16],
   [feature = 'amenity_social_facility'][zoom >= 17],
   [feature = 'amenity_fire_station'][zoom >= 17],
   [feature = 'amenity_post_office'][zoom >= 17],
@@ -1840,7 +1839,7 @@
     text-placement: interior;
   }
 
-  [feature = 'amenity_marketplace'][zoom >= 16][way_pixels > 3000],
+  [feature = 'amenity_marketplace'][zoom >= 16][way_pixels > 900],
   [feature = 'amenity_marketplace'][zoom >= 17] {
     text-name: "[name]";
     text-size: @standard-font-size;
