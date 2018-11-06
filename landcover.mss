@@ -53,7 +53,7 @@
 @sand: #f5e9c6;
 @societal_amenities: #fdebd8;   // Lch(99,13,109)
 @tourism: #734a08;
-@quarry: #c5c3c3;
+@quarry: #c5bea6;
 @military: #f55;
 @beach: #fff1ba;
 @wastewater_plant: @industrial;
