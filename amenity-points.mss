@@ -1,15 +1,15 @@
 @marina-text: #576ddf; // also swimming_pool
 @wetland-text: darken(#4aa5fa, 25%); /* Also for marsh and mud */
 @shop-icon: #684268;
-@shop-text: darken(@shop-icon, 20%)
+@shop-text: darken(@shop-icon, 10%);
 @transportation-icon: #8461C4;
-@transportation-text: darken(@transportation-icon, 10%)
+@transportation-text: darken(@transportation-icon, 10%);
 @accommodation-icon: @transportation-icon;
 @accommodation-text: @transportation-text;
 @airtransport: @transportation-icon; //also ferry_terminal
 @health-color: #da0092;
 @amenity-brown: #734a08;
-@gastronomy-icon: @amenity-brown;
+@gastronomy: @amenity-brown;
 @memorials: @amenity-brown;
 @culture: @amenity-brown;
 @public-service: @amenity-brown;
@@ -39,7 +39,7 @@
 .points {
   [feature = 'tourism_alpine_hut'][zoom >= 13],
   [feature = 'tourism_wilderness_hut'][zoom >= 13],
-  [feature = 'amenity_shelter'][zoom >= 16] {
+  [feature = 'amenity_shelter'][zoom >= 17] {
     marker-file: url('symbols/amenity/shelter.svg');
     [feature = 'tourism_wilderness_hut'] {
       marker-file: url('symbols/tourism/wilderness_hut.svg');
@@ -86,7 +86,7 @@
   [feature = 'amenity_restaurant'][zoom >= 17] {
     marker-placement: interior;
     marker-clip: false;
-    marker-fill: @gastronomy-icon;
+    marker-fill: @gastronomy;
     [feature != 'amenity_food_court'][zoom = 17] {
       marker-width: 4;
       marker-line-width: 0;

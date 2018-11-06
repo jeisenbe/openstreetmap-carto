@@ -63,7 +63,7 @@
 
 // --- Sports ---
 
-@pitch: lighten(@park, 30%); // also track
+@pitch: lighten(@grass, 5%); // also track
 @track: @pitch;
 @stadium: @societal_amenities; // also sports_centre
 @golf_course: @campsite;
