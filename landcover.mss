@@ -4,7 +4,7 @@
 @scrub: #b5e3b5;
 @forest: #add19e;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
-@park: #c8facc;         // Lch(94,30,145)
+@park: #c8facc;         // Lch(94,30,145) also recreation ground
 @orchard: #aedfa3; // also vineyard, plant_nursery
 
 // --- "Base" landuses ---
@@ -107,8 +107,8 @@
   [feature = 'landuse_recreation_ground'][zoom >= 10],
   [feature = 'leisure_playground'][zoom >= 13],
   [feature = 'leisure_fitness_station'][zoom >= 13] {
-    polygon-fill: @leisure;
-    line-color: darken(@leisure, 60%);
+    polygon-fill: @park;
+    line-color: darken(@park, 60%);
     line-width: 0.3;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
