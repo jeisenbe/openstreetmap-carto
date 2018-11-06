@@ -65,7 +65,7 @@
 
 @pitch: lighten(@park, 30%); // also track
 @track: @pitch;
-@stadium: @leisure; // also sports_centre
+@stadium: @societal_amenities; // also sports_centre
 @golf_course: #b5e3b5;
 
 #landcover-low-zoom[zoom < 10],
