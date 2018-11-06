@@ -1404,8 +1404,8 @@
     marker-fill: @airtransport;
   }
 
-  [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 14],
-  [feature = 'aeroway_aerodrome'][zoom >= 11][zoom < 14] {
+  [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 16],
+  [feature = 'aeroway_aerodrome'][zoom >= 12][zoom < 18] {
     marker-file: url('symbols/aerodrome.12.svg');
     marker-placement: interior;
     marker-clip: false;
