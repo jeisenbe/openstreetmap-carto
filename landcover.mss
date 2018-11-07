@@ -1,7 +1,8 @@
 // --- Parks, woods, other green things ---
 
 @grass: #cdebb0; // also grassland, meadow, common, village_green, garden
-@scrub: #bfe2aa;
+@heath: #cae2a5;
+@scrub: #badba4;
 @forest: #add19e;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145) also recreation ground
@@ -43,7 +44,6 @@
 @campsite: #def6c0; // also caravan_site, picnic_site
 @cemetery: #aacbaf; // also grave_yard
 @construction: #c7c7b4; // also brownfield
-@heath: #d6d99f;
 @mud: rgba(203,177,154,0.3); // produces #e6dcd1 over @land
 @place_of_worship: #fdebd8; // also landuse_religious
 @place_of_worship_outline: saturate(darken(@place_of_worship, 30%), 20%);
