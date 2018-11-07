@@ -923,7 +923,7 @@
       marker-fill: @shop-icon;
     }
 
-    [zoom >= 17][zoom < 18][shop != 'supermarket'][shop != 'department_store'][shop != 'mall'][shop != 'bakery'][shop != 'books'][shop != 'butcher'][shop != 'computer'][zoom >= 17][shop != 'chemist'][shop != 'convenience'][shop != 'copyshop'][shop != 'deli'][shop != 'doityourself'][shop != 'hardware'][shop != 'dry_cleaning'][shop != 'fishmonger'][shop != 'seafood'][shop != 'garden_centre'][shop != 'greengrocer'][shop != 'farm'][zoom >= 17] {
+    [zoom >= 17][zoom < 18][shop != 'supermarket'][shop != 'department_store'][shop != 'mall'][shop != 'bakery'][shop != 'books'][shop != 'butcher'][shop != 'computer'][zoom >= 17][shop != 'chemist'][shop != 'convenience'][shop != 'copyshop'][shop != 'deli'][shop != 'doityourself'][shop != 'hardware'][shop != 'dry_cleaning'][shop != 'fishmonger'][shop != 'seafood'][shop != 'garden_centre'][shop != 'greengrocer'][shop != 'farm'][shop != 'hairdresser'][shop != 'car'][shop != 'car_parts'][shop != 'car_repair'][shop != 'bicycle'][shop != 'electronics'][shop != 'furniture'][shop != 'medical_supply'][shop != 'motorcycle'][shop != 'music'][shop != 'musical_instrument'][shop != 'travel_agency'][shop != 'wholesale'][shop != 'variety_store'][zoom >= 17] {
       marker-width: 4;
       marker-line-width: 0;
     }
@@ -1079,7 +1079,7 @@
       marker-file: url('symbols/shop/ice_cream.svg');
     }
 
-    [shop = 'car'][zoom >= 18] {
+    [shop = 'car'][zoom >= 17] {
       marker-file: url('symbols/shop/car.svg');
     }
 
@@ -2187,12 +2187,15 @@
   [feature = 'man_made_water_works'],
   [feature = 'man_made_wastewater_plant'],
   [feature = 'landuse_commercial'],
+
   [feature = 'landuse_brownfield'],
   [feature = 'landuse_landfill'],
   [feature = 'landuse_construction'],
   [feature = 'tourism_theme_park'],
   [feature = 'tourism_zoo'],
   [feature = 'tourism_attraction'],
+  [feature = 'amenity_place_of_worship'],
+  [feature = 'landuse_religious'],
   [feature = 'amenity_kindergarten'],
   [feature = 'amenity_school'],
   [feature = 'amenity_college'],
@@ -2310,11 +2313,13 @@
         text-fill: #660033;
         text-face-name: @standard-font;
       }
+      [feature = 'amenity_place_of_worship'],
+      [feature = 'landuse_religious'],
       [feature = 'amenity_kindergarten'],
       [feature = 'amenity_school'],
       [feature = 'amenity_college'],
       [feature = 'amenity_university'] {
-        text-fill: darken(@societal_amenities, 80%);
+        text-fill: darken(@societal_amenities, 60%);
       }
       [feature = 'landuse_religious'] {
         text-fill: darken(@place_of_worship, 50%);
@@ -2331,7 +2336,7 @@
       }
       [feature = 'leisure_sports_centre'],
       [feature = 'leisure_stadium'] {
-        text-fill: darken(@stadium, 70%);
+        text-fill: darken(@stadium, 60%);
       }
       [feature = 'leisure_fitness_centre'],
       [feature = 'leisure_fitness_station'] {
