@@ -19,7 +19,7 @@
 @track-fill-noaccess: #e2c5bb;
 @aeroway-fill: #bbc;
 @runway-fill: @aeroway-fill;
-@taxiway-fill: lighten(@aeroway-fill, 5%);
+@taxiway-fill: lighten(@aeroway-fill, 3%);
 @helipad-fill: @aeroway-fill;
 @access-marking: #eaeaea;
 @access-marking-living-street: #cccccc;

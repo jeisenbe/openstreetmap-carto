@@ -29,7 +29,7 @@
 // --- Transport ----
 
 @transportation-area: #e2e2f2;
-@apron: lighten(@aeroway-fill, 10%);
+@apron: lighten(@aeroway-fill, 6%);
 @garages: #dfddce;
 @parking: #eeeeee;
 @parking-outline: saturate(darken(@parking, 40%), 20%);
