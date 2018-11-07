@@ -13,7 +13,7 @@
 @built-up-lowzoom: #aaaaaa;
 @built-up-z11: #c0c0c0;
 @built-up-z12: #d0d0d0;
-@residential: #e0dfdf;      // Lch(89,0,0)
+@residential: #e9e7e2;      // Lch(89,0,0)
 @residential-line: #b9b9b9; // Lch(75,0,0)
 @retail: #ffd6d1;           // Lch(89,16,30)
 @retail-line: #d99c95;      // Lch(70,25,30)
@@ -28,7 +28,7 @@
 
 // --- Transport ----
 
-@transportation-area: #e9e7e2;
+@transportation-area: #e2e2f2;
 @apron: #d0d0d4;
 @garages: #dfddce;
 @parking: #eeeeee;
@@ -621,7 +621,7 @@
   [feature = 'amenity_bus_station'][zoom >= 15] {
     polygon-fill: @transportation-area;
     line-width: 0.2;
-    line-color: saturate(darken(@transportation-area, 40%), 20%);
+    line-color: saturate(darken(@transportation-area, 30%), 20%);
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
