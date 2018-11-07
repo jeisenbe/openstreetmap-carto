@@ -1,11 +1,11 @@
-@building-fill: rgba(217,208,201,0.5); //Lch(84, 5, 70)
+@building-fill: rgba(217,208,201,0.6); //Lch(84, 5, 70)
 @building-line: darken(@building-fill, 5%);
 @building-low-zoom: lighten(@building-fill, 5%);
 
-@building-major-fill: darken(@building-fill, 20%);
+@building-major-fill: darken(@building-fill, 15%);
 @building-major-line: darken(@building-major-fill, 10%);
 
-@building-minor-fill: lighten(@building-fill, 10%);
+@building-minor-fill: rgba(217,208,201,0.4); //Lch(84, 5, 70)
 @building-minor-line: darken(@building-minor-fill, 5%);
 
 @building-retail-fill: desaturate(darken(@retail, 4%), 20%);
