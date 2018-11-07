@@ -676,7 +676,7 @@
   [feature = 'man_made_cross'][zoom >= 17],
   [feature = 'historic_wayside_cross'][zoom >= 17] {
     marker-file: url('symbols/man_made/cross.svg');
-    marker-fill: #000000;
+    marker-fill: #555;
     marker-placement: interior;
     marker-clip: false;
   }
@@ -1514,7 +1514,7 @@
   [feature = 'man_made_cross'][zoom >= 16],
   [feature = 'historic_wayside_cross'][zoom >= 16] {
     marker-file: url('symbols/man_made/cross.svg');
-    marker-fill: #000000;
+    marker-fill: #555;
     marker-placement: interior;
     marker-clip: false;
   }
