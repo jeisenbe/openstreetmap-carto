@@ -14,7 +14,7 @@
 @culture: @amenity-brown;
 @public-service: @amenity-brown;
 @office: @man-made-icon;
-@man-made-icon: #555;
+@man-made-icon: #666666;
 @advertising-grey: @man-made-icon;
 @landform-color: #d08f55;
 @leisure-green: @amenity-brown;
@@ -641,7 +641,7 @@
 
   [feature = 'amenity_place_of_worship'][zoom >= 16] {
     marker-file: url('symbols/amenity/place_of_worship.svg');
-    marker-fill: #000000;
+    marker-fill: #555;
     marker-placement: interior;
     marker-clip: false;
     [religion = 'christian'] {
