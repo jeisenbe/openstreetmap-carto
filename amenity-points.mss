@@ -923,7 +923,7 @@
       marker-fill: @shop-icon;
     }
 
-    [zoom >= 17][zoom < 18][shop != 'supermarket'][shop != 'department_store'][shop != 'mall'][shop != 'bakery'][shop != 'books'][shop != 'butcher'][shop != 'computer'][zoom >= 17][shop != 'chemist'][shop != 'convenience'][shop != 'copyshop'][shop != 'deli'][shop != 'doityourself'][shop != 'hardware'][shop != 'dry_cleaning'][shop != 'fishmonger'][shop != 'seafood'][shop != 'garden_centre'][shop != 'greengrocer'][shop != 'farm'][shop != 'hairdresser'][shop != 'car'][shop != 'car_parts'][shop != 'car_repair'][shop != 'bicycle'][shop != 'electronics'][shop != 'furniture'][shop != 'medical_supply'][shop != 'motorcycle'][shop != 'music'][shop != 'musical_instrument'][shop != 'travel_agency'][shop != 'wholesale'][shop != 'variety_store'] {
+    [zoom >= 17][zoom < 18][shop != 'supermarket'][shop != 'department_store'][shop != 'mall'][shop != 'bakery'][shop != 'books'][shop != 'butcher'][shop != 'computer'][zoom >= 17][shop != 'chemist'][shop != 'convenience'][shop != 'copyshop'][shop != 'deli'][shop != 'doityourself'][shop != 'hardware'][shop != 'dry_cleaning'][shop != 'laundry'][shop != 'fishmonger'][shop != 'seafood'][shop != 'garden_centre'][shop != 'greengrocer'][shop != 'farm'][shop != 'hairdresser'][shop != 'car'][shop != 'car_parts'][shop != 'car_repair'][shop != 'bicycle'][shop != 'electronics'][shop != 'furniture'][shop != 'medical_supply'][shop != 'motorcycle'][shop != 'music'][shop != 'musical_instrument'][shop != 'travel_agency'][shop != 'wholesale'][shop != 'variety_store'] {
       marker-width: 4;
       marker-line-width: 0;
     }
