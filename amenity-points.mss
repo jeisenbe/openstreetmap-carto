@@ -1407,6 +1407,13 @@
     marker-fill: @airtransport;
   }
 
+  [feature = 'aeroway_terminal']['access' != 'private'][way_pixels > 900][zoom >= 16] {
+    marker-file: url('symbols/aerodrome.12.svg');
+    marker-placement: interior;
+    marker-clip: false;
+    marker-fill: @airtransport;
+  }
+
   [feature = 'amenity_ferry_terminal'][zoom >= 15] {
     marker-file: url('symbols/amenity/ferry.svg');
     marker-placement: interior;
@@ -2976,6 +2983,7 @@
 
   [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 14],
   [feature = 'aeroway_aerodrome'][zoom >= 11][zoom < 14],
+  [feature = 'aeroway_terminal'][zoom >= 15],
   [feature = 'amenity_ferry_terminal'][zoom >= 15] {
     text-name: "[name]";
     text-size: @standard-font-size;
