@@ -688,6 +688,13 @@
     marker-placement: interior;
     marker-clip: false;
   }
+
+  [feature = 'man_made_water_well'][zoom >= 18], {
+    marker-file: url('symbols/man_made/well.svg');
+    marker-fill: @water-color;
+    marker-placement: interior;
+    marker-clip: false;
+  }
   
   [feature = 'historic_wayside_shrine'][zoom >= 17] {
     marker-file: url('symbols/historic/shrine.svg');
@@ -1920,6 +1927,7 @@
   [feature = 'man_made_telescope']["telescope:type" != 'optical']["telescope:type" != null][zoom >= 16],
   [feature = 'man_made_telescope'][zoom >= 17],
   [feature = 'man_made_water_tower'][zoom >= 17],
+  [feature = 'man_made_water_well'][zoom >= 18],
   [feature = 'man_made_chimney'][zoom >= 17],
   [feature = 'man_made_waste_water_plant'][zoom >= 17] {
     text-name: "[name]";
@@ -1931,6 +1939,10 @@
     [feature = 'man_made_cross'],
     [feature = 'historic_wayside_cross'] {
       text-dy: 6;
+    }
+    [feature = 'man_made_water_well'] { 
+      text-dy: 8;
+      text-fill: @water-text;
     }
     [feature = 'historic_city_gate'],
     [feature = 'man_made_mast'],
