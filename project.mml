@@ -288,12 +288,12 @@ Layer:
         (SELECT
              way, "natural"
            FROM planet_osm_polygon
-           WHERE "natural" IN ('spring')
+           WHERE "natural" IN ('spring', 'hot_spring')
          UNION ALL
          SELECT
              way, "natural"
            FROM planet_osm_point
-           WHERE "natural" IN ('spring')
+           WHERE "natural" IN ('spring', 'hot_spring')
         ) AS springs
     properties:
       minzoom: 14
@@ -1483,7 +1483,7 @@ Layer:
               'man_made_' || CASE WHEN (man_made IN ('mast', 'tower', 'water_tower', 'lighthouse', 'windmill', 'obelisk', 'communications_tower', 'telescope',
                                                      'chimney', 'crane', 'storage_tank', 'silo', 'water__well',  'windpump')
                                         AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)) THEN man_made ELSE NULL END,
-              'natural_' || CASE WHEN "natural" IN ('spring') THEN "natural" ELSE NULL END,
+              'natural_' || CASE WHEN "natural" IN ('spring', 'hot_spring', 'geyser') THEN "natural" ELSE NULL END,
               'historic_' || CASE WHEN historic IN ('memorial', 'monument', 'archaeological_site', 'fort', 'castle', 'manor', 'city_gate')
                              THEN historic ELSE NULL END,
               'military_'|| CASE WHEN military IN ('bunker') THEN military ELSE NULL END,
@@ -1551,7 +1551,7 @@ Layer:
             OR (man_made IN ('mast', 'tower', 'water_tower', 'lighthouse', 'windmill', 'obelisk', 'communications_tower', 'telescope', 'chimney',
                              'crane', 'storage_tank', 'silo', 'water_well', 'windpump')
                 AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL))
-            OR "natural" IN ('spring')
+            OR "natural" IN ('spring', 'hot_spring', 'geyser')
             OR historic IN ('memorial', 'monument', 'archaeological_site', 'fort', 'castle', 'manor', 'city_gate')
             OR military IN ('bunker')
             OR highway IN ('bus_stop', 'elevator', 'traffic_signals')
@@ -1619,7 +1619,7 @@ Layer:
               'man_made_' || CASE WHEN (man_made IN ('mast', 'tower', 'water_tower', 'lighthouse', 'windmill', 'obelisk', 'communications_tower', 'telescope',
                                                      'chimney', 'crane', 'storage_tank', 'silo', 'water_well', 'windpump')
                                         AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)) THEN man_made ELSE NULL END,
-              'natural_' || CASE WHEN "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'cave_entrance') THEN "natural" ELSE NULL END,
+              'natural_' || CASE WHEN "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'hot_spring', 'geyser', 'cave_entrance') THEN "natural" ELSE NULL END,
               'waterway_' || CASE WHEN "waterway" IN ('waterfall') THEN waterway ELSE NULL END,
               'historic_' || CASE WHEN historic IN ('memorial', 'monument', 'archaeological_site', 'fort', 'castle', 'manor', 'city_gate')
                              THEN historic ELSE NULL END,
@@ -1708,7 +1708,7 @@ Layer:
             OR (man_made IN ('mast', 'tower', 'water_tower', 'lighthouse', 'windmill', 'cross', 'obelisk', 'communications_tower', 'telescope',
                              'chimney', 'crane', 'storage_tank', 'silo', 'water_well', 'windpump')
                 AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL))
-            OR "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'cave_entrance')
+            OR "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'hot_spring', 'geyser', 'cave_entrance')
             OR waterway IN ('waterfall')
             OR historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross', 'fort', 'wayside_shrine', 'castle', 'manor', 'city_gate')
             OR military IN ('bunker')
@@ -2112,7 +2112,7 @@ Layer:
                                                      'communications_tower', 'telescope', 'chimney', 'crane', 'storage_tank', 'silo', 'water_well', 'windpump',
                                                      'wastewater_plant', 'water_works')
                                         AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)) THEN man_made ELSE NULL END,
-              'natural_' || CASE WHEN "natural" IN ('wood', 'water', 'mud', 'wetland', 'marsh', 'bay', 'spring', 'scree', 'shingle', 'bare_rock', 'sand', 'heath',
+              'natural_' || CASE WHEN "natural" IN ('wood', 'water', 'mud', 'wetland', 'marsh', 'bay', 'spring', 'hot_spring', 'geyser', 'scree', 'shingle', 'bare_rock', 'sand', 'heath',
                                                     'grassland', 'scrub', 'beach', 'shoal', 'reef', 'glacier', 'strait') THEN "natural" ELSE NULL END,
               'place_' || CASE WHEN place IN ('island', 'islet') THEN place ELSE NULL END,
               'military_' || CASE WHEN military IN ('danger_area', 'bunker') THEN military ELSE NULL END,
@@ -2297,7 +2297,7 @@ Layer:
                   'man_made_' || CASE WHEN (man_made IN ('lighthouse', 'windmill', 'mast', 'tower', 'water_tower', 'obelisk', 'works', 'communications_tower',
                                                          'telescope', 'chimney', 'crane', 'storage_tank', 'silo', 'water_well', 'windpump', 'wastewater_plant', 'water_works')
                                             AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)) THEN man_made ELSE NULL END,
-                  'natural_' || CASE WHEN "natural" IN ('wood', 'peak', 'volcano', 'saddle', 'cave_entrance', 'water', 'mud', 'wetland', 'marsh', 'bay', 'spring',
+                  'natural_' || CASE WHEN "natural" IN ('wood', 'peak', 'volcano', 'saddle', 'cave_entrance', 'water', 'mud', 'wetland', 'marsh', 'bay', 'spring', 'hot_spring', 'geyser',
                                                         'scree', 'shingle', 'bare_rock', 'sand', 'heath', 'grassland', 'scrub', 'beach', 'glacier', 'tree', 'strait')
                                                         THEN "natural" ELSE NULL END,
                   'waterway_' || CASE WHEN waterway IN ('waterfall') THEN waterway ELSE NULL END,

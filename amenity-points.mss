@@ -731,7 +731,27 @@
 
   [feature = 'natural_spring'][zoom >= 14] {
     marker-file: url('symbols/spring_small.svg');
-    [zoom >= 16] { marker-file: url('symbols/spring.svg'); }
+    [zoom >= 16] { 
+      marker-file: url('symbols/spring.svg');
+    }
+    marker-placement: interior;
+    marker-clip: false;
+  }
+
+  [feature = 'natural_geyser'][zoom >= 14] {
+    marker-file: url('symbols/geyser_small.svg');
+    [zoom >= 16] { 
+      marker-file: url('symbols/geyser.svg');
+    }
+    marker-placement: interior;
+    marker-clip: false;
+  }
+
+  [feature = 'natural_hot_spring'][zoom >= 14] {
+    marker-file: url('symbols/spring_small_hot.svg');
+    [zoom >= 16] {
+      marker-file: url('symbols/spring_hot.svg');
+    }
     marker-placement: interior;
     marker-clip: false;
   }
@@ -2272,7 +2292,6 @@
   [feature = 'man_made_water_works'],
   [feature = 'man_made_wastewater_plant'],
   [feature = 'landuse_commercial'],
-
   [feature = 'landuse_brownfield'],
   [feature = 'landuse_landfill'],
   [feature = 'landuse_construction'],
@@ -2583,19 +2602,25 @@
     }
   }
 
-  [feature = 'amenity_fountain'][zoom >= 17] {
+  [feature = 'amenity_fountain'][zoom >= 17],
+  [feature = 'man_made_water_well'][zoom >= 16],
+  [feature = 'man_made_windpump'][zoom >= 16],
+  [feature = 'natural_geyser'][zoom >= 16],
+  [feature = 'natural_spring'][zoom >= 16],
+  [feature = 'natural_hot_spring'][zoom >= 16] {
     text-name: "[name]";
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
     text-fill: @marina-text;
-    text-dy: 4;
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-placement: interior;
-    [zoom >= 18] {
-      text-dy: 10;
+    text-dy: 6;
+    [feature = 'natural_geyser'],
+    [feature = 'amenity_fountain'][zoom >= 18] {
+      text-dy: 9;
     }
   }
 
