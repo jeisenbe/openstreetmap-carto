@@ -1479,7 +1479,7 @@
     [zoom >= 15] {
       marker-file: url('symbols/power_wind.svg');
       marker-placement: interior;
-      marker-fill: black;
+      marker-fill: @man-made-icon;
       marker-clip: false;
     }
   }
@@ -1514,7 +1514,7 @@
   [feature = 'man_made_cross'][zoom >= 16],
   [feature = 'historic_wayside_cross'][zoom >= 16] {
     marker-file: url('symbols/man_made/cross.svg');
-    marker-fill: #555;
+    marker-fill: @man-made-icon;
     marker-placement: interior;
     marker-clip: false;
   }
