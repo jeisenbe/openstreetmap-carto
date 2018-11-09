@@ -719,13 +719,23 @@
     marker-clip: false;
   }
 
-  [feature = 'man_made_water_well'][zoom >= 18], {
-    marker-file: url('symbols/man_made/well.svg');
-    marker-fill: @water-color;
+  [feature = 'man_made_water_well'],
+  [feature = 'man_made_windpump'][zoom >= 15] {
+    marker-file: url('symbols/well_small.svg');
+    [zoom >= 17] {
+      marker-file: url('symbols/well.svg');
+    }
     marker-placement: interior;
     marker-clip: false;
   }
-  
+
+  [feature = 'natural_spring'][zoom >= 14] {
+    marker-file: url('symbols/spring_small.svg');
+    [zoom >= 16] { marker-file: url('symbols/spring.svg'); }
+    marker-placement: interior;
+    marker-clip: false;
+  }
+
   [feature = 'historic_wayside_shrine'][zoom >= 17] {
     marker-file: url('symbols/historic/shrine.svg');
     marker-fill: @man-made-icon;
@@ -2437,8 +2447,7 @@
     }
   }
 
-  [feature = 'natural_bay'][zoom >= 14],
-  [feature = 'natural_spring'][zoom >= 16] {
+  [feature = 'natural_bay'][zoom >= 14] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: @standard-wrap-width;
@@ -2448,8 +2457,6 @@
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-placement: interior;
-    [feature = 'natural_spring'] {
-      text-dy: 6;
     }
   }
 
