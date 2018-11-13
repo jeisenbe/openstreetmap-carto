@@ -1951,6 +1951,7 @@
     [feature = 'man_made_water_works'],
     [feature = 'man_made_wastewater_plant'] { 
       text-dy: 10;
+      text-fill: darken(@man-made-icon, 10%);
     }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
