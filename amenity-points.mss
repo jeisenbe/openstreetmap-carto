@@ -1951,7 +1951,7 @@
     [feature = 'man_made_water_works'],
     [feature = 'man_made_wastewater_plant'] { 
       text-dy: 10;
-      text-fill: darken(@man-made-icon, 10%);
+      text-fill: darken(@man-made-icon, 15%);
     }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
@@ -1991,7 +1991,7 @@
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
-    text-fill: @man-made-icon;
+    text-fill: darken(@man-made-icon, 15%);
     text-dy: 11;
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
@@ -2527,7 +2527,7 @@
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
-    text-fill: @man-made-icon;
+    text-fill: darken(@man-made-icon, 15%);
     text-dy: 16;
     [feature = 'man_made_windmill'] { text-dy: 12; }
     text-face-name: @standard-font;
@@ -3005,7 +3005,7 @@
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
     text-dy: 11;
-    text-fill: @man-made-icon;
+    text-fill: darken(@man-made-icon, 15%);
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
