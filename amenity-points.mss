@@ -1477,7 +1477,7 @@
     [zoom >= 15] {
       marker-file: url('symbols/power_wind.svg');
       marker-placement: interior;
-      marker-fill: black;
+      marker-fill: @man-made-icon;
       marker-clip: false;
     }
   }
