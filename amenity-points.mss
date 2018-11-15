@@ -2476,7 +2476,6 @@
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-placement: interior;
-    }
   }
 
   [feature = 'amenity_atm'][zoom >= 19] {
