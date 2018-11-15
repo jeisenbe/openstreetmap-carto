@@ -721,9 +721,9 @@
 
   [feature = 'man_made_water_well'],
   [feature = 'man_made_windpump'][zoom >= 15] {
-    marker-file: url('symbols/well_small.svg');
+    marker-file: url('symbols/man_made/well_small.svg');
     [zoom >= 17] {
-      marker-file: url('symbols/well.svg');
+      marker-file: url('symbols/man_made/well.svg');
     }
     marker-placement: interior;
     marker-clip: false;
