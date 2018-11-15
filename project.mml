@@ -1488,7 +1488,8 @@ Layer:
                              THEN historic ELSE NULL END,
               'military_'|| CASE WHEN military IN ('bunker') THEN military ELSE NULL END,
               'highway_'|| CASE WHEN highway IN ('bus_stop', 'elevator', 'traffic_signals') THEN highway ELSE NULL END,
-              'power_' || CASE WHEN power IN ('generator') THEN power ELSE NULL END,
+              'power_' || CASE WHEN (power IN ('generator')
+                                     AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)) THEN power ELSE NULL END,
               'tourism_' || CASE WHEN tourism IN ('viewpoint') THEN tourism ELSE NULL END
             ) AS feature,
             access,
@@ -1555,7 +1556,7 @@ Layer:
             OR historic IN ('memorial', 'monument', 'archaeological_site', 'fort', 'castle', 'manor', 'city_gate')
             OR military IN ('bunker')
             OR highway IN ('bus_stop', 'elevator', 'traffic_signals')
-            OR (power = 'generator' AND (tags @> '"generator:source"=>wind' OR tags @> 'power_source=>wind'))
+            OR (power = 'generator' AND tags @> '"generator:source"=>wind')
           ORDER BY way_area desc
         ) AS amenity_points_poly
     properties:
@@ -1626,7 +1627,8 @@ Layer:
               'military_'|| CASE WHEN military IN ('bunker') THEN military ELSE NULL END,
               'highway_'|| CASE WHEN highway IN ('bus_stop', 'elevator', 'traffic_signals') THEN highway
                                 WHEN tags @> 'ford=>yes' OR tags @> 'ford=>stepping_stones' THEN 'ford' ELSE NULL END,
-              'power_' || CASE WHEN power IN ('generator') THEN power ELSE NULL END,
+              'power_' || CASE WHEN (power IN ('generator')
+                                     AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)) THEN power ELSE NULL END,
               'tourism_' || CASE WHEN tourism IN ('viewpoint') THEN tourism ELSE NULL END,
               'barrier_' || CASE WHEN barrier IN ('toll_booth') THEN barrier ELSE NULL END,
               'man_made_' || CASE WHEN man_made IN ('cross') THEN man_made ELSE NULL END,
@@ -1715,7 +1717,7 @@ Layer:
             OR tags @> 'emergency=>phone'
             OR highway IN ('bus_stop', 'elevator', 'traffic_signals')
             OR tags @> 'ford=>yes' OR tags @> 'ford=>stepping_stones'
-            OR (power = 'generator' AND (tags @> '"generator:source"=>wind' OR tags @> 'power_source=>wind'))
+            OR (power = 'generator' AND tags @> '"generator:source"=>wind')
           ORDER BY score DESC NULLS LAST
           ) AS amenity_points
     properties:
@@ -2142,6 +2144,8 @@ Layer:
               ELSE NULL
             END AS height,
             tags->'operator' as operator,
+            tags->'generator:source' as "generator:source",
+            tags->'location' as location,
             tags->'icao' as icao,
             tags->'iata' as iata,
             tags->'office' as office,
@@ -2248,6 +2252,8 @@ Layer:
             office,
             recycling_type,
             "telescope:type",
+            "generator:source",
+            location,
             castle_type,
             sport,
             information,
@@ -2289,7 +2295,8 @@ Layer:
                                                       'pitch','playground', 'park', 'recreation_ground', 'common', 'garden', 'nature_reserve', 'marina',
                                                       'slipway', 'picnic_table', 'dog_park', 'fitness_station', 'firepit', 'sauna', 'beach_resort',
                                                       'bowling_alley', 'outdoor_seating', 'bird_hide', 'amusement_arcade', 'swimming_area') THEN leisure ELSE NULL END,
-                  'power_' || CASE WHEN power IN ('plant', 'station', 'generator', 'sub_station', 'substation') THEN power ELSE NULL END,
+                  'power_' || CASE WHEN (power IN ('plant', 'station', 'generator', 'sub_station', 'substation')
+                                         AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)) THEN power ELSE NULL END,
                   'landuse_' || CASE WHEN landuse IN ('reservoir', 'basin', 'recreation_ground', 'village_green', 'quarry', 'vineyard', 'orchard', 'cemetery',
                                                       'residential', 'garages', 'meadow', 'grass', 'allotments', 'forest', 'farmyard', 'farmland',
                                                       'greenhouse_horticulture', 'retail', 'industrial', 'railway', 'commercial', 'brownfield', 'landfill',
@@ -2336,6 +2343,8 @@ Layer:
                 "natural",
                 waterway,
                 tags->'operator' as operator,
+                tags->'location' as location,
+                tags->'generator:source' as "generator:source",
                 tags->'icao' as icao,
                 tags->'iata' as iata,
                 tags->'office' as office,
@@ -2372,7 +2381,8 @@ Layer:
                   OR military IN ('danger_area', 'bunker')
                   OR historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross', 'fort', 'wayside_shrine', 'castle', 'manor', 'city_gate')
                   OR highway IN ('bus_stop', 'services', 'rest_area', 'elevator')
-                  OR power IN ('plant', 'station', 'generator', 'sub_station', 'substation')
+                  OR (power IN ('plant', 'station', 'generator', 'sub_station', 'substation')
+                      AND (tags->'location' NOT IN ('roof', 'rooftop') OR (tags->'location') IS NULL)) 
                   OR boundary IN ('national_park')
                   OR waterway IN ('dam', 'weir', 'dock'))
                 AND (name IS NOT NULL
