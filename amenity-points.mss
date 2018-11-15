@@ -477,6 +477,7 @@
       }      
       ["tower:type" = 'communication'] {
         marker-file: url('symbols/man_made/mast_communications.svg');
+        marker-transform: 'translate(0,-4)';
       }
     }
   }
@@ -517,15 +518,19 @@
         marker-file: url('symbols/man_made/tower_dome.svg');
       }
       ["tower:type" = 'communication'] {
-        marker-file: url('symbols/man_made/tower_cantilever_communication.svg');
         ["tower:construction" = 'lattice'] {
           marker-file: url('symbols/man_made/tower_lattice_communication.svg');
+	  marker-transform: 'translate(0,-4)';
         }
         ["tower:construction" = 'dish'] {
           marker-file: url('symbols/man_made/tower_dish.svg');
         }
         ["tower:construction" = 'dome'] {
           marker-file: url('symbols/man_made/tower_dome.svg');
+        }
+        ["tower:construction" != 'dome']["tower:construction" != 'dish']["tower:construction" != 'lattice'] {
+          marker-file: url('symbols/man_made/tower_cantilever_communication.svg');
+          marker-transform: 'translate(0,-4)';
         }
       }
       ["tower:type" = 'lighting'] {
@@ -542,6 +547,7 @@
     marker-fill: @man-made-icon;
     marker-placement: interior;
     marker-clip: false;
+    marker-transform: 'translate(0,-4)';
   }
   
   [feature = 'man_made_chimney'] {
@@ -1502,7 +1508,7 @@
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @man-made-icon;
-  }
+ }
 
   [feature = 'natural_peak'][zoom >= 11] {
     marker-file: url('symbols/natural/peak.svg');
@@ -2030,6 +2036,9 @@
     text-line-spacing: @standard-line-spacing-size;
     text-fill: darken(@man-made-icon, 15%);
     [feature = 'man_made_cross'],
+    [feature = 'man_made_mast']["tower:type" = 'communication'],
+    [feature = 'man_made_tower']["tower:type" = 'communication']["tower:construction" != 'dish']["tower:construction" != 'dome'],
+    [feature = 'man_made_communications_tower'],
     [feature = 'historic_wayside_cross'] {
       text-dy: 6;
     }
@@ -2039,9 +2048,9 @@
     }
     [feature = 'power_generator'],
     [feature = 'historic_city_gate'],
-    [feature = 'man_made_mast'],
-    [feature = 'man_made_tower'],
-    [feature = 'man_made_communications_tower'],
+    [feature = 'man_made_mast']["tower:type" != 'communication'],
+    [feature = 'man_made_tower']["tower:type" != 'communication'],
+    [feature = 'man_made_chimney'],
     [feature = 'man_made_telescope'],
     [feature = 'man_made_water_tower'],
     [feature = 'man_made_storage_tank'],
