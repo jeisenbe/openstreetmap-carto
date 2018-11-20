@@ -1,7 +1,7 @@
 // --- Parks, woods, other green things ---
 
 @grass: #cdebb0; // also grassland, meadow, common, village_green, garden
-@scrub: #b5e3b5;
+@scrub: #d1e0b4;
 @forest: #add19e;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145)
@@ -753,10 +753,6 @@
         polygon-pattern-file: url('symbols/beach_coarse.png');
         polygon-pattern-alignment: global;
       }
-    }
-    [natural = 'scrub'] {
-      polygon-pattern-file: url('symbols/scrub.png');
-      polygon-pattern-alignment: global;
     }
   }
 
