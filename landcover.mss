@@ -1,6 +1,7 @@
 // --- Parks, woods, other green things ---
 
 @grass: #cdebb0; // also grassland, meadow, common, village_green, garden
+@heath: #dde5a9;
 @scrub: #d1e0b4;
 @forest: #add19e;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
@@ -43,7 +44,6 @@
 @campsite: #def6c0; // also caravan_site, picnic_site
 @cemetery: #aacbaf; // also grave_yard
 @construction: #c7c7b4; // also brownfield
-@heath: #d6d99f;
 @mud: rgba(203,177,154,0.3); // produces #e6dcd1 over @land
 @place_of_worship: #d0d0d0; // also landuse_religious
 @place_of_worship_outline: darken(@place_of_worship, 30%);
@@ -755,7 +755,11 @@
       }
     }
     [natural = 'scrub'] {
-      polygon-pattern-file: url('symbols/scrub5.png');
+      polygon-pattern-file: url('symbols/scrub4.png');
+      polygon-pattern-alignment: global;
+    }
+    [natural = 'heath'] {
+      polygon-pattern-file: url('symbols/heath4.png');
       polygon-pattern-alignment: global;
     }
   }
