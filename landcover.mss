@@ -754,9 +754,13 @@
         polygon-pattern-alignment: global;
       }
     }
+    [natural = 'scrub'] {
+      polygon-pattern-file: url('symbols/scrub5.png');
+      polygon-pattern-alignment: global;
+    }
   }
-
-  //Also landuse = forest, converted in the SQL
+ 
+   //Also landuse = forest, converted in the SQL
   [natural = 'wood'][zoom >= 13]::wood {
     polygon-pattern-file: url('symbols/leaftype_unknown.svg'); // Lch(55,30,135)
     [leaf_type = "broadleaved"] { polygon-pattern-file: url('symbols/leaftype_broadleaved.svg'); }
