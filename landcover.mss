@@ -1,8 +1,8 @@
 // --- Parks, woods, other green things ---
 
 @grass: #cdebb0; // also grassland, meadow, common, village_green, garden
-@heath: #d5dca1;
-@scrub: #d1e0b4;
+@heath: #d1e0b4;
+@scrub: #c8d7ab;
 @forest: #add19e;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145)
@@ -755,11 +755,15 @@
       }
     }
     [natural = 'scrub'] {
-      polygon-pattern-file: url('symbols/scrub4.png');
+      polygon-pattern-file: url('symbols/scrub3.png');
       polygon-pattern-alignment: global;
     }
     [natural = 'heath'] {
       polygon-pattern-file: url('symbols/heath9.png');
+      polygon-pattern-alignment: global;
+    }
+    [natural = 'grassland'] {
+      polygon-pattern-file: url('symbols/dashes-short-b3d097.png');
       polygon-pattern-alignment: global;
     }
   }
