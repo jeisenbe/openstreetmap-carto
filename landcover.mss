@@ -759,7 +759,7 @@
       polygon-pattern-alignment: global;
     }
     [natural = 'heath'] {
-      polygon-pattern-file: url('symbols/heath9.png');
+      polygon-pattern-file: url('symbols/heath7.png');
       polygon-pattern-alignment: global;
 //    }
 //    [natural = 'grassland'] {
