@@ -755,12 +755,12 @@
       }
     }
     [natural = 'scrub'] {
-      polygon-pattern-file: url('symbols/scrub4.png');
+      polygon-pattern-file: url('symbols/scrub6.png');
       polygon-pattern-alignment: global;
-    }
-    [natural = 'heath'] {
-      polygon-pattern-file: url('symbols/heath7.png');
-      polygon-pattern-alignment: global;
+//    }
+//    [natural = 'heath'] {
+//      polygon-pattern-file: url('symbols/heath7.png');
+//      polygon-pattern-alignment: global;
 //    }
 //    [natural = 'grassland'] {
 //      polygon-pattern-file: url('symbols/dashes-short-b3d097.png');
