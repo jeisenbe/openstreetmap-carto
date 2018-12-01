@@ -7,7 +7,7 @@
 @accommodation-icon: @transportation-icon;
 @accommodation-text: @transportation-text;
 @airtransport: @transportation-icon; //also ferry_terminal
-@health-color: #da0092;
+@health-color: #BF0000;
 @amenity-brown: #734a08;
 @gastronomy: @amenity-brown;
 @memorials: @amenity-brown;
@@ -341,13 +341,6 @@
     marker-clip: false;
   }
 
-  [feature = 'amenity_hospital'][zoom >= 15] {
-    marker-file: url('symbols/amenity/hospital.svg');
-    marker-fill: @health-color;
-    marker-placement: interior;
-    marker-clip: false;
-  }
-
   [feature = 'amenity_casino'][zoom >= 17] {
     marker-file: url('symbols/amenity/casino.svg');
     marker-fill: @amenity-brown;
@@ -646,23 +639,53 @@
     }
   }
 
-  [feature = 'amenity_pharmacy'][zoom >= 17] {
-    marker-file: url('symbols/amenity/pharmacy.svg');
-    marker-fill: @health-color;
-    marker-placement: interior;
-    marker-clip: false;
-  }
-
-  [feature = 'amenity_clinic'][zoom >= 16],
-  [feature = 'amenity_doctors'][zoom >= 17] {
+  [feature = 'amenity_clinic'][zoom >= 17],
+  [feature = 'healthcare_clinic'][zoom >= 17],
+  [feature = 'amenity_doctors'][zoom >= 17],
+  [feature = 'healthcare_centre'][zoom >= 17] {
     marker-file: url('symbols/amenity/doctors.svg');
     marker-fill: @health-color;
     marker-placement: interior;
     marker-clip: false;
   }
 
-  [feature = 'amenity_dentist'][zoom >= 17] {
-    marker-file: url('symbols/amenity/dentist.svg');
+  [feature = 'healthcare_doctor'][zoom >= 17] {
+    [zoom >= 17][zoom < 18] {
+      marker-width: 4;
+      marker-line-width: 0;
+    }
+    [zoom >= 18] {
+      marker-file: url('symbols/amenity/doctors.svg');
+    }
+    marker-fill: @health-color;
+    marker-placement: interior;
+    marker-clip: false;
+  }
+
+  [feature = 'amenity_dentist'][zoom >= 17],
+  [feature = 'healthcare_dentist'][zoom >= 17] {
+    [zoom >= 17][zoom < 18] {
+      marker-width: 4;
+      marker-line-width: 0;
+    }
+    [zoom >= 18] {
+      marker-file: url('symbols/amenity/dentist.svg');
+    }
+    marker-fill: @health-color;
+    marker-placement: interior;
+    marker-clip: false;
+  }
+
+  [feature = 'amenity_hospital'][zoom >= 15],
+  [feature = 'healthcare_hospital'][zoom >= 15] {
+    marker-file: url('symbols/amenity/hospital.svg');
+    marker-fill: @health-color;
+    marker-placement: interior;
+    marker-clip: false;
+  }
+
+  [feature = 'amenity_pharmacy'][zoom >= 17] {
+    marker-file: url('symbols/amenity/pharmacy.svg');
     marker-fill: @health-color;
     marker-placement: interior;
     marker-clip: false;
@@ -673,6 +696,34 @@
     marker-fill: @health-color;
     marker-placement: interior;
     marker-clip: false;
+  }
+
+  [feature = 'healthcare_alternative'],
+  [feature = 'healthcare_audiologist'],
+  [feature = 'healthcare_birthing_center'],
+  [feature = 'healthcare_blood_bank'],
+  [feature = 'healthcare_blood_donation'],
+  [feature = 'healthcare_dialysis'],
+  [feature = 'healthcare_laboratory'],
+  [feature = 'healthcare_midwife'],
+  [feature = 'healthcare_occupational_therapist'],
+  [feature = 'healthcare_optometrist'],
+  [feature = 'healthcare_physiotherapist'],
+  [feature = 'healthcare_podiatrist'],
+  [feature = 'healthcare_psychotherapist'],
+  [feature = 'healthcare_rehabilitation'],
+  [feature = 'healthcare_speech_therapist'],
+  [feature = 'healthcare_yes'] {
+    [zoom >= 17] {
+      marker-width: 4;
+      [zoom >= 18] {
+        marker-width: 6;
+      }
+      marker-line-width: 0;
+      marker-placement: interior;
+      marker-clip: false;
+      marker-fill: @health-color;
+    }
   }
 
   [feature = 'amenity_place_of_worship'][zoom >= 16] {
@@ -830,7 +881,7 @@
   }
 
   [feature = 'amenity_arts_centre'][zoom >= 17] {
-    marker-file: url('symbols/shop/art.svg');
+    marker-file: url('symbols/amenity/arts_centre.svg');
     marker-fill: @culture;
     marker-placement: interior;
     marker-clip: false;
@@ -1453,11 +1504,18 @@
    }
 
   [feature = 'leisure_amusement_arcade'][zoom >= 17] {
-     marker-file: url('symbols/amusement_arcade.svg');
+     marker-file: url('symbols/leisure/amusement_arcade.svg');
      marker-fill: @leisure-green;
      marker-placement: interior;
      marker-clip: false;
    }
+
+  [feature = 'leisure_fishing'][zoom >= 17] {
+     marker-file: url('symbols/leisure/fishing.svg');
+     marker-fill: @leisure-green;
+     marker-placement: interior;
+     marker-clip: false;
+  }
 
   // Slipway tagging on points - slipway on lines is defined later
   [feature = 'leisure_slipway'][zoom >= 17] {
@@ -1556,13 +1614,11 @@
     marker-clip: false;
   }
 
-  [feature = 'power_generator']['generator:source' = 'wind'] {
-    [zoom >= 15] {
-      marker-file: url('symbols/power_wind.svg');
-      marker-placement: interior;
-      marker-fill: @man-made-icon;
-      marker-clip: false;
-    }
+  [feature = 'power_generator']['generator:source' = 'wind'][zoom >= 15] {
+    marker-file: url('symbols/generator_wind.svg');
+    marker-placement: interior;
+    marker-fill: @man-made-icon;
+    marker-clip: false;
   }
 
   [feature = 'man_made_windmill'][zoom >= 16] {
@@ -1707,6 +1763,8 @@
 /* Note that .text is also used in water.mss */
 .text-low-zoom[zoom < 10],
 .text[zoom >= 10] {
+  [feature = 'natural_cape'][zoom >= 4][way_pixels > 3000][way_pixels < 800000],
+  [feature = 'natural_cape'][zoom >= 16][way_pixels < 800000],
   [feature = 'place_island'][zoom >= 4][way_pixels > 3000][way_pixels < 800000],
   [feature = 'place_island'][zoom >= 16][way_pixels < 800000],
   [feature = 'place_islet'][zoom >= 11][way_pixels > 3000][way_pixels < 800000],
@@ -1888,6 +1946,7 @@
   [feature = 'leisure_bird_hide'][zoom >= 17],
   [feature = 'leisure_amusement_arcade'][zoom >= 17],
   [feature = 'leisure_outdoor_seating'][zoom >= 19],
+  [feature = 'leisure_fishing'][zoom >= 17],
   [feature = 'leisure_picnic_table'][zoom >= 17] {
     text-name: "[name]";
     text-size: @standard-font-size;
@@ -1896,6 +1955,7 @@
     text-fill: @amenity-brown;
     [feature = 'tourism_picnic_site'],
     [feature = 'leisure_outdoor_seating'],
+    [feature = 'leisure_fishing'],
     [feature = 'leisure_bowling_alley'],
     [feature = 'leisure_bird_hide'],
     [feature = 'leisure_amusement_arcade'],
@@ -1979,6 +2039,21 @@
     text-placement: interior;
   }
 
+  [feature = 'natural_cape'][zoom >= 14] {
+    text-name: "[name]";
+    text-fill: #000;
+    text-size: @landcover-font-size;
+    text-wrap-width: @landcover-wrap-width-size;
+    text-line-spacing: @landcover-line-spacing-size;
+    text-size: @landcover-font-size-big;
+    text-wrap-width: @landcover-wrap-width-size-big;
+    text-line-spacing: @landcover-line-spacing-size-big;
+    text-face-name: @oblique-fonts;
+    text-halo-radius: @standard-halo-radius;
+    text-halo-fill: @standard-halo-fill;
+    text-placement: interior;
+  }
+
   [feature = 'tourism_information'][zoom >= 19],
   [feature = 'tourism_information']["information"='office'][zoom >= 17] {
       text-name: "[name]";
@@ -2034,7 +2109,7 @@
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
-    text-fill: darken(@man-made-icon, 15%);
+    text-fill: darken(@man-made-icon, 20%);
     [feature = 'man_made_cross'],
     [feature = 'man_made_mast']["tower:type" = 'communication'],
     [feature = 'man_made_tower']["tower:type" = 'communication']["tower:construction" != 'dish']["tower:construction" != 'dome'],
@@ -2056,8 +2131,7 @@
     [feature = 'man_made_storage_tank'],
     [feature = 'man_made_silo'],
     [feature = 'man_made_chimney'],
-    [feature = 'man_made_crane'], 
-    [feature = 'man_made_chimney'] {
+    [feature = 'man_made_crane'], {
       text-dy: 10;
       text-fill: darken(@man-made-icon, 15%);
     }
@@ -2102,7 +2176,7 @@
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
-    text-fill: darken(@man-made-icon, 15%);
+    text-fill: darken(@man-made-icon, 20%);
     text-dy: 10;
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
@@ -2650,7 +2724,7 @@
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
-    text-fill: darken(@man-made-icon, 15%);
+    text-fill: darken(@man-made-icon, 20%);
     text-dy: 10;
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
@@ -2672,7 +2746,8 @@
     text-placement: interior;
   }
 
-  [feature = 'amenity_hospital'][zoom >= 16] {
+  [feature = 'amenity_hospital'][zoom >= 16],
+  [feature = 'healthcare_hospital'][zoom >= 16] {
     text-name: "[name]";
     text-fill: @health-color;
     text-size: @standard-font-size;
@@ -2690,7 +2765,27 @@
   [feature = 'amenity_pharmacy'],
   [feature = 'amenity_doctors'],
   [feature = 'amenity_dentist'],
-  [feature = 'amenity_veterinary'] {
+  [feature = 'amenity_veterinary'],
+  [feature = 'healthcare_alternative'],
+  [feature = 'healthcare_audiologist'],
+  [feature = 'healthcare_birthing_center'],
+  [feature = 'healthcare_blood_bank'],
+  [feature = 'healthcare_blood_donation'],
+  [feature = 'healthcare_centre'],
+  [feature = 'healthcare_clinic'],
+  [feature = 'healthcare_dentist'],
+  [feature = 'healthcare_dialysis'],
+  [feature = 'healthcare_doctor'],
+  [feature = 'healthcare_laboratory'],
+  [feature = 'healthcare_midwife'],
+  [feature = 'healthcare_occupational_therapist'],
+  [feature = 'healthcare_optometrist'],
+  [feature = 'healthcare_physiotherapist'],
+  [feature = 'healthcare_podiatrist'],
+  [feature = 'healthcare_psychotherapist'],
+  [feature = 'healthcare_rehabilitation'],
+  [feature = 'healthcare_speech_therapist'],
+  [feature = 'healthcare_yes'] {
     [zoom >= 17] {
       text-name: "[name]";
       text-size: @standard-font-size;
@@ -3128,7 +3223,7 @@
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
     text-dy: 10;
-    text-fill: darken(@man-made-icon, 15%);
+    text-fill: darken(@man-made-icon, 20%);
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
