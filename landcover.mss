@@ -51,8 +51,7 @@
 @power: darken(@industrial, 5%);
 @power-line: darken(@industrial-line, 5%);
 @sand: #f5e9c6;
-@societal_amenities: #fdebd8;   // Lch(99,13,109)
-@societal_amenities: #ffffe5;   // Lch(94,12,75)
+@societal_amenities: #ffffe5;   // Lch(99,13,109)
 @tourism: #734a08;
 @quarry: #c5bea6;
 @military: #f55;
@@ -670,7 +669,7 @@
     polygon-fill: @track;
     [zoom >= 15] {
       line-width: 0.5;
-      line-color: saturate(darken(@track, 30%), 20%);
+      line-color: darken(@track, 20%);
     }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
@@ -680,7 +679,7 @@
     polygon-fill: @pitch;
     [zoom >= 15] {
       line-width: 0.5;
-      line-color: saturate(darken(@pitch, 30%), 20%);
+      line-color: darken(@pitch, 20%);
     }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
