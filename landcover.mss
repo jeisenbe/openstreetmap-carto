@@ -1,12 +1,13 @@
 // --- Parks, woods, other green things ---
 
-@grass: #cdebb0; // also grassland, meadow, common, village_green, garden
-@heath: #dce0b2;        // Lch(88,24,112)
+@grass: #cdebb0;        // Lch(90,32,128) also common, village_green, garden, marsh
+@meadow; #def6c0;       // Lch(94,29,126)
+@heath: #dce0b2;        // Lch(88,24,112) also bog
 @scrub: #c8d7ab;        // Lch(84,24,122)
 @forest: #add19e;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145) also recreation ground
-@orchard: #aedfa3; // also vineyard, plant_nursery
+@orchard: #aedfa3;      // Lch(84,36,138) also vineyard, plant_nursery
 
 // --- "Base" landuses ---
 
@@ -41,7 +42,6 @@
 
 @allotments: #eecfb3;       // Lch(85,19,70)
 @bare_ground: #eee5dc;
-@campsite: #def6c0; // also caravan_site, picnic_site
 @cemetery: #aacbaf; // also grave_yard
 @construction: #c7c7b4; // also brownfield
 @mud: rgba(203,177,154,0.3); // produces #e6dcd1 over @land
@@ -66,7 +66,8 @@
 @pitch: lighten(@grass, 5%); // also track
 @track: @pitch;
 @stadium: @societal_amenities; // also sports_centre
-@golf_course: @campsite;
+@golf_course: @leisure;
+@campsite: @leisure; // also caravan_site, picnic_site
 
 #landcover-low-zoom[zoom < 10],
 #landcover[zoom >= 10] {
@@ -338,7 +339,12 @@
   }
 
   [feature = 'natural_grassland'][zoom >= 5],
-  [feature = 'landuse_meadow'][zoom >= 5],
+  [feature = 'landuse_meadow'][zoom >= 5] {
+    polygon-fill: @meadow;
+    [way_pixels >= 4]  { polygon-gamma: 0.75; }
+    [way_pixels >= 64] { polygon-gamma: 0.3;  }
+  }
+
   [feature = 'landuse_grass'][zoom >= 10],
   [feature = 'landuse_village_green'][zoom >= 10],
   [feature = 'leisure_common'][zoom >= 10] {
