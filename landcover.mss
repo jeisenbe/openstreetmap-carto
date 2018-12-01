@@ -6,7 +6,8 @@
 @scrub: #c8d7ab;        // Lch(84,24,122)
 @forest: #add19e;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
-@park: #c8facc;         // Lch(94,30,145) also recreation ground
+@park: #c4edc4;         // Lch(90,26,143) also recreation ground
+@leisure: #d0f8cf;       // Lch(94,26,143)
 @orchard: #aedfa3;      // Lch(84,36,138) also vineyard, plant_nursery
 
 // --- "Base" landuses ---
@@ -47,7 +48,6 @@
 @mud: rgba(203,177,154,0.3); // produces #e6dcd1 over @land
 @place_of_worship: #fdebd8; // also landuse_religious
 @place_of_worship_outline: saturate(darken(@place_of_worship, 30%), 20%);
-@leisure: lighten(@park, 5%);
 @power: darken(@industrial, 5%);
 @power-line: darken(@industrial-line, 5%);
 @sand: #f5e9c6;
@@ -64,9 +64,9 @@
 
 // --- Sports ---
 
-@pitch: lighten(@grass, 5%); // also track
+@pitch: #b5dbbb;     // Lch(8r,22,148) also track
 @track: @pitch;
-@stadium: @societal_amenities; // also sports_centre
+@stadium: @leisure; // also sports_centre
 @golf_course: @leisure;
 @campsite: @leisure; // also caravan_site, picnic_site
 
