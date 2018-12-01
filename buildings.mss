@@ -9,13 +9,13 @@
 @building-minor-line: darken(@building-minor-fill, 5%);
 
 @building-retail-fill: desaturate(darken(@retail, 4%), 20%);
-@building-retail-line: darken(@building-retail-fill, 5%);
+@building-retail-line: darken(@building-retail-fill, 4%);
 
 @building-commercial-fill: desaturate(darken(@commercial, 4%), 20%);
 @building-commercial-line: darken(@building-commercial-fill, 3%);
 
-@building-school-fill: desaturate(darken(@societal_amenities, 10%), 30%);
-@building-school-line: darken(@building-school-fill, 10%);
+@building-school-fill: desaturate(darken(@societal_amenities, 8%), 30%);
+@building-school-line: darken(@building-school-fill, 8%);
 
 @building-medical-fill: desaturate(darken(@societal_amenities, 15%), 30%);
 @building-medical-line: darken(@building-medical-fill, 10%);
