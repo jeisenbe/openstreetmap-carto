@@ -1,7 +1,7 @@
 // --- Parks, woods, other green things ---
 
 @grass: #cdebb0;        // Lch(90,32,128) also common, village_green, garden, marsh
-@meadow; #def6c0;       // Lch(94,29,126)
+@meadow: #def6c0;       // Lch(94,29,126)
 @heath: #dce0b2;        // Lch(88,24,112) also bog
 @scrub: #c8d7ab;        // Lch(84,24,122)
 @forest: #add19e;       // Lch(80,30,135)
@@ -52,6 +52,7 @@
 @power-line: darken(@industrial-line, 5%);
 @sand: #f5e9c6;
 @societal_amenities: #fdebd8;   // Lch(99,13,109)
+@societal_amenities: #ffffe5;   // Lch(94,12,75)
 @tourism: #734a08;
 @quarry: #c5bea6;
 @military: #f55;
