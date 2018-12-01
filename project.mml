@@ -267,7 +267,7 @@ Layer:
               END AS int_wetland,
             tags->'leaf_type' AS leaf_type
           FROM planet_osm_polygon
-          WHERE ("natural" IN ('marsh', 'mud', 'wetland', 'wood', 'beach', 'shoal', 'reef', 'scrub', 'sand') OR landuse = 'forest')
+          WHERE ("natural" IN ('grassland', 'marsh', 'mud', 'wetland', 'wood', 'beach', 'shoal', 'reef', 'heath', 'scrub', 'sand') OR landuse = 'forest')
             AND building IS NULL
             AND way_area > 1*!pixel_width!::real*!pixel_height!::real
           ORDER BY COALESCE(layer,0), way_area DESC
