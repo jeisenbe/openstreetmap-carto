@@ -17,8 +17,8 @@
 @built-up-z12: #e0e0e0;
 @residential: #e9e7e2;      // Lch(89,0,0)
 @residential-line: #b9b9b9; // Lch(75,0,0)
-@retail: #ffd6d1;           // Lch(89,16,30)
-@retail-line: #d99c95;      // Lch(70,25,30)
+@retail: #feded9;           // Lch(91,12,32)
+@retail-line: #e6bdb7;      // Lch(80,16,32)
 @commercial: #f2dad9;       // Lch(89,8.5,25)
 @commercial-line: #d1b2b0;  // Lch(75,12,25)
 @industrial: #ebdbe8;       // Lch(89,9,330) (Also used for railway, wastewater_plant)
