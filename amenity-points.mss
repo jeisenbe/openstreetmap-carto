@@ -639,10 +639,10 @@
     }
   }
 
-  [feature = 'amenity_clinic'][zoom >= 17],
-  [feature = 'healthcare_clinic'][zoom >= 17],
+  [feature = 'amenity_clinic'][zoom >= 16],
+  [feature = 'healthcare_clinic'][zoom >= 16],
   [feature = 'amenity_doctors'][zoom >= 17],
-  [feature = 'healthcare_centre'][zoom >= 17] {
+  [feature = 'healthcare_centre'][zoom >= 16] {
     marker-file: url('symbols/amenity/doctors.svg');
     marker-fill: @health-color;
     marker-placement: interior;
