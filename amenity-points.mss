@@ -1724,6 +1724,9 @@
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
     text-dy: 10;
+    [feature = 'amenity_fast_food'] {
+      text-dy: 8;
+    }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
@@ -1745,7 +1748,9 @@
       text-line-spacing: @standard-line-spacing-size;
       text-fill: @culture;
       text-dy: 10;
-      [feature = 'amenity_community_centre'] { text-dy: 10; }
+      [feature = 'amenity_community_centre'] {
+        text-dy: 8;
+      }
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
@@ -1790,6 +1795,10 @@
     text-line-spacing: @standard-line-spacing-size;
     text-fill: @transportation-text;
     text-dy: 10;
+    [feature = 'barrier_toll_booth'],
+    [feature = 'leisure_slipway'] {
+      text-dy: 8;
+    }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
@@ -1835,7 +1844,10 @@
     text-line-spacing: @standard-line-spacing-size;
     text-fill: @public-service;
     text-dy: 10;
-    [feature = 'amenity_bank'] { text-dy: 9; }
+    [feature = 'amenity_bank'],
+    [feature = 'amenity_post_office'] {
+      text-dy: 8;
+    }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
@@ -1996,6 +2008,9 @@
     [feature = 'historic_wayside_cross'] {
       text-dy: 6;
     }
+    [feature = 'natural_cave_entrance']  {
+      text-dy: 8;
+    }
     [feature = 'power_generator'],
     [feature = 'historic_city_gate'],
     [feature = 'man_made_mast'],
@@ -2005,8 +2020,7 @@
     [feature = 'man_made_water_tower'],
     [feature = 'man_made_storage_tank'],
     [feature = 'man_made_silo'],
-    [feature = 'man_made_chimney'],
-    [feature = 'natural_cave_entrance']  {
+    [feature = 'man_made_chimney']{
       text-dy: 10;
     }
     text-face-name: @standard-font;
@@ -2370,7 +2384,6 @@
       }
       [feature = 'tourism_caravan_site'] {
         text-fill: darken(@campsite, 50%);
-        text-dy: 15;
       }
       [feature = 'tourism_theme_park'],
       [feature = 'tourism_zoo'] {
@@ -2486,6 +2499,10 @@
     text-line-spacing: @standard-line-spacing-size;
     text-fill: @accommodation-text;
     text-dy: 10;
+    [feature = 'tourism_caravan_site'],
+    [feature = 'tourism_hotel'] {
+      text-dy: 8;
+    }
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
@@ -2771,6 +2788,9 @@
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
       text-dy: 10;
+      [feature = 'shop_bakery'] {
+        text-dy: 8;
+      }
       text-fill: @shop-text;
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
