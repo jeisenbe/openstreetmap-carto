@@ -46,13 +46,16 @@
         [way_pixels >= 4] {
           polygon-pattern-gamma: 0.75;
           line-width: 0.4;
+          line-offset: 0.4;
         }
         [way_pixels >= 64] {
           polygon-pattern-gamma: 0.6;
           line-width: 0.8;
+          line-offset: 0.8;
         }
         [way_pixels >= 256] {
           line-width: 1.2;
+          line-offset: 1.2;
         }
       }
     }
@@ -80,13 +83,16 @@
         [way_pixels >= 4] {
           polygon-pattern-gamma: 0.75;
           line-width: 0.4;
+          line-offset: 0.4;
         }
         [way_pixels >= 64] {
           polygon-pattern-gamma: 0.6;
           line-width: 0.8;
+          line-offset: 0.8;
         }
         [way_pixels >= 256] {
           line-width: 1.2;
+          line-offset: 1.2;
         }
       }
     }
