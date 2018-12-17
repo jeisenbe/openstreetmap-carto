@@ -22,7 +22,7 @@
 @industrial-line: #c6b3c3;  // Lch(75,11,330) (Also used for railway-line, wastewater_plant-line)
 @farmland: #eef0d5;         // Lch(94,14,112)
 @farmland-line: #c7c9ae;    // Lch(80,14,112)
-@farmyard: #f5dcba;         // Lch(89,20,80)
+@farmyard: #fbecd7;         // Lch(94,12,82)
 @farmyard-line: #d1b48c;    // Lch(75,25,80)
 
 // --- Transport ----
