@@ -16,8 +16,8 @@
 @residential-line: #b9b9b9; // Lch(75,0,0)
 @retail: #eecfb3;           // Lch(85,19,70)
 @retail-line: #caa47f;      // Lch(70,26,70)
-@commercial: #d4be9c;       // Lch(94,12,82)
-@commercial-line: #d4be9c;  // Lch(78,20,82)
+@commercial: #f2dad9;       // Lch(89,8.5,25)
+@commercial-line: #d1b2b0;  // Lch(75,12,25)
 @industrial: #ebdbe8;       // Lch(89,9,330) (Also used for railway, wastewater_plant)
 @industrial-line: #c6b3c3;  // Lch(75,11,330) (Also used for railway-line, wastewater_plant-line)
 @farmland: #eef0d5;         // Lch(94,14,112)
@@ -38,7 +38,7 @@
 
 // --- Other ----
 
-@allotments: #eecfb3;       // Lch(85,19,70)
+@allotments: @grass;
 @bare_ground: #eee5dc;
 @campsite: #def6c0; // also caravan_site, picnic_site
 @cemetery: #aacbaf; // also grave_yard
