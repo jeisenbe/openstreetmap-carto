@@ -14,7 +14,7 @@
 @built-up-z12: #d0d0d0;
 @residential: #e0dfdf;      // Lch(89,0,0)
 @residential-line: #b9b9b9; // Lch(75,0,0)
-@retail: #eecfb3;           // Lch(85,19,70)
+@retail: #f6dbc3;           // Lch(89,16,70)
 @retail-line: #caa47f;      // Lch(70,26,70)
 @commercial: #f2dad9;       // Lch(89,8.5,25)
 @commercial-line: #d1b2b0;  // Lch(75,12,25)
