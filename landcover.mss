@@ -14,10 +14,10 @@
 @built-up-z12: #d0d0d0;
 @residential: #e0dfdf;      // Lch(89,0,0)
 @residential-line: #b9b9b9; // Lch(75,0,0)
-@retail: #f7d9d1;           // Lch(89,12,40)
-@retail-line: #ddaea2;      // Lch(75,20,40)
+@retail: #f7d9d1;           // Lch(89,12,60)
+@retail-line: #ddaea2;      // Lch(75,20,60)
 @commercial: #eedbdb;       // Lch(89,7,20)
-@commercial-line: ##cdb3b3;  // Lch(75,10,20)
+@commercial-line: #cdb3b3;  // Lch(75,10,20)
 @industrial: #e8dce6;       // Lch(89,7,330) (Also used for railway, wastewater_plant)
 @industrial-line: #c4b4c1;  // Lch(75,9,330) (Also used for railway-line, wastewater_plant-line)
 @farmland: #eef0d5;         // Lch(94,14,112)

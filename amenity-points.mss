@@ -2374,10 +2374,10 @@
       [feature = 'man_made_wastewater_plant'],
       [feature = 'man_made_water_works'],
       [feature = 'man_made_works'] {
-        text-fill: darken(@industrial, 60%);
+        text-fill: darken(@industrial, 50%);
       }
       [feature = 'landuse_commercial'] {
-        text-fill: darken(@commercial, 60%);
+        text-fill: darken(@commercial, 50%);
       }
       [feature = 'landuse_brownfield'],
       [feature = 'landuse_landfill'],
