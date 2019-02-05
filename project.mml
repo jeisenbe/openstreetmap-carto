@@ -54,31 +54,6 @@ Stylesheet:
   - admin.mss
   - addressing.mss
 Layer:
-  - id: world
-    geometry: polygon
-    <<: *extents
-    Datasource:
-      file: data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp
-      type: shape
-    properties:
-      maxzoom: 9
-  - id: coast-poly
-    geometry: polygon
-    <<: *extents
-    Datasource:
-      file: data/land-polygons-split-3857/land_polygons.shp
-      type: shape
-    properties:
-      minzoom: 10
-  - id: necountries
-    geometry: linestring
-    <<: *extents84
-    Datasource:
-      file: data/ne_110m_admin_0_boundary_lines_land/ne_110m_admin_0_boundary_lines_land.shp
-      type: shape
-    properties:
-      minzoom: 1
-      maxzoom: 3
   - id: landcover-low-zoom
     geometry: polygon
     <<: *extents
@@ -176,6 +151,14 @@ Layer:
         ) AS landcover_line
     properties:
       minzoom: 14
+  - id: icesheet-poly
+    geometry: polygon
+    <<: *extents
+    Datasource:
+      file: data/antarctica-icesheet-polygons-3857/icesheet_polygons.shp
+      type: shape
+    properties:
+      minzoom: 5
   - id: water-lines-casing
     geometry: linestring
     <<: *extents
@@ -212,14 +195,29 @@ Layer:
     properties:
       minzoom: 8
       maxzoom: 11
-  - id: icesheet-poly
-    geometry: polygon
+  - id: water-lines
+    class: water-lines
+    geometry: linestring
     <<: *extents
     Datasource:
-      file: data/antarctica-icesheet-polygons-3857/icesheet_polygons.shp
-      type: shape
+      <<: *osm2pgsql
+      table: |-
+        (SELECT
+            way,
+            waterway,
+            name,
+            CASE WHEN tags->'intermittent' IN ('yes')
+              OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
+              THEN 'yes' ELSE 'no' END AS int_intermittent,
+            CASE WHEN tunnel IN ('yes', 'culvert') THEN 'yes' ELSE 'no' END AS int_tunnel,
+            'no' AS bridge
+          FROM planet_osm_line
+          WHERE waterway IN ('river', 'canal', 'stream', 'drain', 'ditch', 'wadi')
+            AND (bridge IS NULL OR bridge NOT IN ('yes', 'aqueduct'))
+          ORDER BY COALESCE(layer,0)
+        ) AS water_lines
     properties:
-      minzoom: 5
+      minzoom: 12
   - id: water-areas
     geometry: polygon
     <<: *extents
@@ -249,6 +247,25 @@ Layer:
         ) AS water_areas
     properties:
       minzoom: 0
+  - id: ocean-lz
+    class: "ocean"
+    geometry: polygon
+    <<: *extents
+    Datasource:
+      file: data/simplified-water-polygons-complete-3857/simplified_water_polygons.shp
+      type: shape
+    properties:
+      minzoom: 5
+      maxzoom: 9
+  - id: ocean
+    class: "ocean"
+    geometry: polygon
+    <<: *extents
+    Datasource:
+      file: data/water-polygons-split-3857/water_polygons.shp
+      type: shape
+    properties:
+      minzoom: 10
   - id: landcover-area-symbols
     geometry: polygon
     <<: *extents
@@ -311,29 +328,6 @@ Layer:
         ) AS springs
     properties:
       minzoom: 14
-  - id: water-lines
-    class: water-lines
-    geometry: linestring
-    <<: *extents
-    Datasource:
-      <<: *osm2pgsql
-      table: |-
-        (SELECT
-            way,
-            waterway,
-            name,
-            CASE WHEN tags->'intermittent' IN ('yes')
-              OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
-              THEN 'yes' ELSE 'no' END AS int_intermittent,
-            CASE WHEN tunnel IN ('yes', 'culvert') THEN 'yes' ELSE 'no' END AS int_tunnel,
-            'no' AS bridge
-          FROM planet_osm_line
-          WHERE waterway IN ('river', 'canal', 'stream', 'drain', 'ditch', 'wadi')
-            AND (bridge IS NULL OR bridge NOT IN ('yes', 'aqueduct'))
-          ORDER BY COALESCE(layer,0)
-        ) AS water_lines
-    properties:
-      minzoom: 12
   - id: water-barriers-line
     geometry: linestring
     <<: *extents
@@ -1152,6 +1146,15 @@ Layer:
         ) AS aeroways
     properties:
       minzoom: 11
+  - id: necountries
+    geometry: linestring
+    <<: *extents84
+    Datasource:
+      file: data/ne_110m_admin_0_boundary_lines_land/ne_110m_admin_0_boundary_lines_land.shp
+      type: shape
+    properties:
+      minzoom: 1
+      maxzoom: 3
   - id: admin-low-zoom
     geometry: linestring
     <<: *extents
