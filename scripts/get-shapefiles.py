@@ -47,7 +47,7 @@ settings = {
     },
 
     2: {
-        'directory': 'simplified-land-polygons-complete-3857',
+        'directory': 'simplified-water-polygons-complete-3857',
         'url': 'http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip',  # noqa
         'type': 'zip',
         'shp_basename': ['simplified_land_polygons'],
@@ -63,7 +63,7 @@ settings = {
     },
 
     4: {
-        'directory': 'land-polygons-split-3857',
+        'directory': 'water-polygons-split-3857',
         'url': 'http://data.openstreetmapdata.com/land-polygons-split-3857.zip',  # noqa
         'type': 'zip',
         'shp_basename': ['land_polygons'],
