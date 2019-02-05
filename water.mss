@@ -53,15 +53,40 @@
     }
   }
 
-  [natural = 'water']::natural,
-  [landuse = 'reservoir']::landuse,
-  [waterway = 'riverbank']::waterway {
+  [natural = 'water'][water != 'river'][water != 'canal'][waterway != 'riverbank']::natural,
+  [landuse = 'reservoir']::landuse {
     [zoom >= 0][zoom < 1][way_pixels >= 4],
     [zoom >= 1][zoom < 2][way_pixels >= 16],
     [zoom >= 2][zoom < 8][way_pixels >= 32],
     [zoom >= 8] {
       [int_intermittent = 'no'] {
         polygon-fill: @water-color;
+      }
+      [int_intermittent = 'yes'] {
+        polygon-pattern-file: url('symbols/intermittent_water.png');
+        [way_pixels >= 4] {
+          polygon-pattern-gamma: 0.75;
+        }
+        [way_pixels >= 64] {
+          polygon-pattern-gamma: 0.6;
+        }
+      }
+      [way_pixels >= 4] {
+        polygon-gamma: 0.75;
+      }
+      [way_pixels >= 64] {
+        polygon-gamma: 0.6;
+      }
+    }
+  }
+
+  [natural = 'water'][water = 'river']::natural,
+  [natural = 'water'][water = 'canal']::natural,
+  [waterway = 'riverbank']::waterway {
+    [zoom >= 2][zoom < 6][way_pixels >= 4],
+    [zoom >= 6] {
+      [int_intermittent = 'no'] {
+        polygon-fill: @river-color;
         [way_pixels >= 4] {
           polygon-gamma: 0.75;
         }
@@ -113,7 +138,7 @@
       line-join: round;
       line-clip: false;
     }
-    line-color: @water-color;
+    line-color: @river-color;
     line-width: 0.7;
     [zoom >= 9] { line-width: 1.2; }
     [zoom >= 10] { line-width: 1.6; }
@@ -143,7 +168,7 @@
       }
     }
 
-    water/line-color: @water-color;
+    water/line-color: @river-color;
     water/line-width: 2;
     water/line-cap: round;
     water/line-join: round;
@@ -202,7 +227,7 @@
         background/line-color: @land-color;
       }
       water/line-width: 2;
-      water/line-color: @water-color;
+      water/line-color: @river-color;
 
       [bridge = 'yes'] {
         bridgecasing/line-color: black;
