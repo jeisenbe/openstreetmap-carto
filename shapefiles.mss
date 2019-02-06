@@ -13,11 +13,6 @@
 
 .ocean {
   polygon-fill: @ocean-color;
-  [zoom >= 1][zoom < 8] {
-    line-color: darken(@water-color,20%);
-    line-width: 0.5;
-    line-offset: -0.5;
-  }
 }
 
 #icesheet-poly {
