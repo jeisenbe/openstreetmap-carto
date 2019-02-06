@@ -247,8 +247,17 @@ Layer:
         ) AS water_areas
     properties:
       minzoom: 0
-
-  - id: ocean-z2
+  - id: ocean-z0
+    class: "ocean"
+    geometry: "polygon"
+    <<: *extents
+    Datasource:
+      file: "data/water-polygons-generalized-3857/water_polygons_z1.shp"
+      type: "shape"
+    properties:
+      maxzoom: 0
+    advanced: {}
+  - id: ocean-z1
     class: "ocean"
     geometry: "polygon"
     <<: *extents
@@ -256,10 +265,10 @@ Layer:
       file: "data/water-polygons-generalized-3857/water_polygons_z2.shp"
       type: "shape"
     properties:
-      minzoom: 0
-      maxzoom: 0
+      minzoom: 1
+      maxzoom: 1
     advanced: {}
-  - id: ocean-z3
+  - id: ocean-z2
     class: "ocean"
     geometry: "polygon"
     <<: *extents
@@ -267,10 +276,10 @@ Layer:
       file: "data/water-polygons-generalized-3857/water_polygons_z3.shp"
       type: "shape"
     properties:
-      minzoom: 1
-      maxzoom: 1
+      minzoom: 2
+      maxzoom: 2
     advanced: {}
-  - id: ocean-z4
+  - id: ocean-z3
     class: "ocean"
     geometry: "polygon"
     <<: *extents
@@ -278,10 +287,10 @@ Layer:
       file: "data/water-polygons-generalized-3857/water_polygons_z4.shp"
       type: "shape"
     properties:
-      minzoom: 2
-      maxzoom: 2
+      minzoom: 3
+      maxzoom: 3
     advanced: {}
-  - id: ocean-z5
+  - id: ocean-z4
     class: "ocean"
     geometry: "polygon"
     <<: *extents
@@ -289,10 +298,10 @@ Layer:
       file: "data/water-polygons-generalized-3857/water_polygons_z5.shp"
       type: "shape"
     properties:
-      minzoom: 3
-      maxzoom: 3
+      minzoom: 4
+      maxzoom: 4
     advanced: {}
-  - id: ocean-z6
+  - id: ocean-z5
     class: "ocean"
     geometry: "polygon"
     <<: *extents
@@ -300,10 +309,10 @@ Layer:
       file: "data/water-polygons-generalized-3857/water_polygons_z6.shp"
       type: "shape"
     properties:
-      minzoom: 4
-      maxzoom: 4
+      minzoom: 5
+      maxzoom: 5
     advanced: {}
-  - id: ocean-z7
+  - id: ocean-z6
     class: "ocean"
     geometry: "polygon"
     <<: *extents
@@ -311,10 +320,10 @@ Layer:
       file: "data/water-polygons-generalized-3857/water_polygons_z7.shp"
       type: "shape"
     properties:
-      minzoom: 5
-      maxzoom: 5
+      minzoom: 6
+      maxzoom: 6
     advanced: {}
-  - id: ocean-z8
+  - id: ocean-z7
     class: "ocean"
     geometry: "polygon"
     <<: *extents
@@ -322,8 +331,8 @@ Layer:
       file: "data/water-polygons-generalized-3857/water_polygons_z8.shp"
       type: "shape"
     properties:
-      minzoom: 6
-      maxzoom: 6
+      minzoom: 7
+      maxzoom: 7
     advanced: {}
   - id: ocean
     class: "ocean"
@@ -333,7 +342,7 @@ Layer:
       file: data/water-polygons-split-3857/water_polygons.shp
       type: shape
     properties:
-      minzoom: 7
+      minzoom: 8
   - id: landcover-area-symbols
     geometry: polygon
     <<: *extents
