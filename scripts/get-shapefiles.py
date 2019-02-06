@@ -50,8 +50,8 @@ settings = {
         'directory': 'simplified-water-polygons-complete-3857',
         'url': 'http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip',  # noqa
         'type': 'zip',
-        'shp_basename': ['simplified_land_polygons'],
-        'long_opt': '--simplified-land'
+        'shp_basename': ['simplified_water_polygons'],
+        'long_opt': '--simplified-water'
     },
 
     3: {
@@ -66,8 +66,8 @@ settings = {
         'directory': 'water-polygons-split-3857',
         'url': 'http://data.openstreetmapdata.com/land-polygons-split-3857.zip',  # noqa
         'type': 'zip',
-        'shp_basename': ['land_polygons'],
-        'long_opt': '--land-polygons'
+        'shp_basename': ['water_polygons'],
+        'long_opt': '--water-polygons'
     },
 
     5: {
@@ -84,6 +84,14 @@ settings = {
         'type': 'zip',
         'shp_basename': ['icesheet_outlines'],
         'long_opt': '--icesheet-outlines'
+    },
+
+    7: {
+        'directory': 'water-polygons-generalized-3857',
+        'url': 'http://data.openstreetmapdata.com/water-polygons-generalized-3857.zip',  # noqa
+        'type': 'zip',
+        'shp_basename': ['water_polygons_z1', 'water_polygons_z2', 'water_polygons_z2', 'water_polygons_z3', 'water_polygons_z4', 'water_polygons_z5', 'water_polygons_z6'],
+        'long_opt': '--water-polygons-generalized'
     }
 }
 

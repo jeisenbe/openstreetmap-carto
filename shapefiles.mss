@@ -13,13 +13,10 @@
 
 .ocean {
   polygon-fill: @ocean-color;
-  [zoom >= 0][zoom < 10] {
-    polygon-fill: @ocean-color;
-    [zoom < 8] {
-      line-color: darken(@water-color,20%);
-      line-width: 0.5;
-      line-offset: 0.5;
-    }
+  [zoom >= 1][zoom < 8] {
+    line-color: darken(@water-color,20%);
+    line-width: 0.5;
+    line-offset: -0.5;
   }
 }
 
