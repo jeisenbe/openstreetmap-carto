@@ -334,6 +334,16 @@ Layer:
       minzoom: 7
       maxzoom: 7
     advanced: {}
+  - id: ocean-lz
+    class: "ocean"
+    geometry: polygon
+    <<: *extents
+    Datasource:
+      file: data/simplified-water-polygons-complete-3857/simplified_water_polygons.shp
+      type: shape
+    properties:
+      minzoom: 8
+      maxzoom: 9
   - id: ocean
     class: "ocean"
     geometry: polygon
@@ -342,7 +352,7 @@ Layer:
       file: data/water-polygons-split-3857/water_polygons.shp
       type: shape
     properties:
-      minzoom: 8
+      minzoom: 10
   - id: landcover-area-symbols
     geometry: polygon
     <<: *extents
