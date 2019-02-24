@@ -15,6 +15,14 @@
   polygon-fill: @ocean-color;
 }
 
+.coastline {
+  [zoom < 8] {
+    line-color: darken(@ocean-color,20%);
+    line-width: 0.5;
+    line-offset: 0.5;
+  }
+}
+
 #icesheet-poly {
   [zoom >= 5] {
     polygon-fill: @glacier;
