@@ -42,7 +42,7 @@
         }
       }
       [int_intermittent = 'yes'] {
-        polygon-pattern-file: url('symbols/intermittent_water.png');
+        polygon-pattern-file: url('symbols/water_intermittent.png');
         [way_pixels >= 4] {
           polygon-pattern-gamma: 0.75;
           line-width: 0.4;
@@ -78,12 +78,15 @@
         }
       }
       [int_intermittent = 'yes'] {
-        polygon-pattern-file: url('symbols/intermittent_water.png');
+        polygon-pattern-file: url('symbols/water_intermittent.png');
+        polygon-fill: transparent;
+        polygon-pattern-alignment: global;
         line-color: @water-color;
         [way_pixels >= 4] {
           polygon-pattern-gamma: 0.75;
           line-width: 0.4;
           line-offset: 0.4;
+          line-dasharray: 5,1;
         }
         [way_pixels >= 64] {
           polygon-pattern-gamma: 0.6;
