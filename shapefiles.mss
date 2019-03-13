@@ -16,7 +16,7 @@
 }
 
 .coastline {
-  [zoom < 8] {
+  [zoom >= 1][zoom < 8] {
     line-color: darken(@ocean-color,20%);
     line-width: 0.5;
     line-offset: 0.25;

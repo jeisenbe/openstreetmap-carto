@@ -249,20 +249,19 @@ Layer:
       minzoom: 0
   - id: ocean-z0
     class: "ocean"
-    geometry: "polygon"
+    geometry: polygon
     <<: *extents
     Datasource:
-      file: "data/water-polygons-generalized-3857/water_polygons_z1.shp"
+      file: data/simplified-water-polygons-complete-3857/simplified_water_polygons.shp
       type: shape
     properties:
       maxzoom: 0
-    advanced: {}
   - id: ocean-z1
     class: "ocean"
     geometry: "polygon"
     <<: *extents
     Datasource:
-      file: "data/water-polygons-generalized-3857/water_polygons_z2.shp"
+      file: "data/water-polygons-generalized-3857/water_polygons_z1.shp"
       type: shape
     properties:
       minzoom: 1
@@ -273,7 +272,7 @@ Layer:
     geometry: "polygon"
     <<: *extents
     Datasource:
-      file: "data/water-polygons-generalized-3857/water_polygons_z3.shp"
+      file: "data/water-polygons-generalized-3857/water_polygons_z2.shp"
       type: shape
     properties:
       minzoom: 2
@@ -284,7 +283,7 @@ Layer:
     geometry: "polygon"
     <<: *extents
     Datasource:
-      file: "data/water-polygons-generalized-3857/water_polygons_z4.shp"
+      file: "data/water-polygons-generalized-3857/water_polygons_z3.shp"
       type: shape
     properties:
       minzoom: 3
@@ -295,7 +294,7 @@ Layer:
     geometry: "polygon"
     <<: *extents
     Datasource:
-      file: "data/water-polygons-generalized-3857/water_polygons_z5.shp"
+      file: "data/water-polygons-generalized-3857/water_polygons_z4.shp"
       type: shape
     properties:
       minzoom: 4
@@ -306,7 +305,7 @@ Layer:
     geometry: "polygon"
     <<: *extents
     Datasource:
-      file: "data/water-polygons-generalized-3857/water_polygons_z6.shp"
+      file: "data/water-polygons-generalized-3857/water_polygons_z5.shp"
       type: shape
     properties:
       minzoom: 5
@@ -317,7 +316,7 @@ Layer:
     geometry: "polygon"
     <<: *extents
     Datasource:
-      file: "data/water-polygons-generalized-3857/water_polygons_z7.shp"
+      file: "data/water-polygons-generalized-3857/water_polygons_z6.shp"
       type: shape
     properties:
       minzoom: 6
@@ -328,12 +327,22 @@ Layer:
     geometry: "polygon"
     <<: *extents
     Datasource:
-      file: "data/water-polygons-generalized-3857/water_polygons_z8.shp"
+      file: "data/water-polygons-generalized-3857/water_polygons_z7.shp"
       type: shape
     properties:
       minzoom: 7
       maxzoom: 7
     advanced: {}
+  - id: ocean-lz
+    class: "ocean"
+    geometry: polygon
+    <<: *extents
+    Datasource:
+      file: data/simplified-water-polygons-complete-3857/simplified_water_polygons.shp
+      type: shape
+    properties:
+      minzoom: 8
+      maxzoom: 9
   - id: ocean
     class: "ocean"
     geometry: polygon
@@ -342,23 +351,13 @@ Layer:
       file: data/water-polygons-split-3857/water_polygons.shp
       type: shape
     properties:
-      minzoom: 8
-  - id: coastline-z0
-    class: coastline
-    geometry: linestring
-    <<: *extents
-    Datasource:
-      file: "data/coastlines-generalized-3857/coastlines_z1.shp"
-      type: shape
-    properties:
-      maxzoom: 0
-    advanced: {}
+      minzoom: 10
   - id: coastline-z1
     class: coastline
     geometry: linestring
     <<: *extents
     Datasource:
-      file: "data/coastlines-generalized-3857/coastlines_z2.shp"
+      file: "data/coastlines-generalized-3857/coastlines_z1.shp"
       type: shape
     properties:
       minzoom: 1
@@ -369,7 +368,7 @@ Layer:
     geometry: linestring
     <<: *extents
     Datasource:
-      file: "data/coastlines-generalized-3857/coastlines_z3.shp"
+      file: "data/coastlines-generalized-3857/coastlines_z2.shp"
       type: shape
     properties:
       minzoom: 2
@@ -380,7 +379,7 @@ Layer:
     geometry: linestring
     <<: *extents
     Datasource:
-      file: "data/coastlines-generalized-3857/coastlines_z4.shp"
+      file: "data/coastlines-generalized-3857/coastlines_z3.shp"
       type: shape
     properties:
       minzoom: 3
@@ -391,7 +390,7 @@ Layer:
     geometry: linestring
     <<: *extents
     Datasource:
-      file: "data/coastlines-generalized-3857/coastlines_z5.shp"
+      file: "data/coastlines-generalized-3857/coastlines_z4.shp"
       type: shape
     properties:
       minzoom: 4
@@ -402,7 +401,7 @@ Layer:
     geometry: linestring
     <<: *extents
     Datasource:
-      file: "data/coastlines-generalized-3857/coastlines_z6.shp"
+      file: "data/coastlines-generalized-3857/coastlines_z5.shp"
       type: shape
     properties:
       minzoom: 5
@@ -413,7 +412,7 @@ Layer:
     geometry: linestring
     <<: *extents
     Datasource:
-      file: "data/coastlines-generalized-3857/coastlines_z7.shp"
+      file: "data/coastlines-generalized-3857/coastlines_z6.shp"
       type: shape
     properties:
       minzoom: 6
@@ -424,7 +423,7 @@ Layer:
     geometry: linestring
     <<: *extents
     Datasource:
-      file: "data/coastlines-generalized-3857/coastlines_z8.shp"
+      file: "data/coastlines-generalized-3857/coastlines_z7.shp"
       type: shape
     properties:
       minzoom: 7
