@@ -333,7 +333,18 @@ Layer:
       minzoom: 7
       maxzoom: 7
     advanced: {}
-  - id: ocean-lz
+  - id: ocean-z8
+    class: "ocean"
+    geometry: "polygon"
+    <<: *extents
+    Datasource:
+      file: "data/water-polygons-generalized-3857/water_polygons_z8.shp"
+      type: shape
+    properties:
+      minzoom: 8
+      maxzoom: 8
+    advanced: {}
+  - id: ocean-z9
     class: "ocean"
     geometry: polygon
     <<: *extents
@@ -341,7 +352,7 @@ Layer:
       file: data/simplified-water-polygons-complete-3857/simplified_water_polygons.shp
       type: shape
     properties:
-      minzoom: 8
+      minzoom: 9
       maxzoom: 9
   - id: ocean
     class: "ocean"
@@ -428,6 +439,38 @@ Layer:
     properties:
       minzoom: 7
       maxzoom: 7
+    advanced: {}
+  - id: coastline-z8
+    class: coastline
+    geometry: linestring
+    <<: *extents
+    Datasource:
+      file: "data/coastlines-generalized-3857/coastlines_z8.shp"
+      type: shape
+    properties:
+      minzoom: 7
+      maxzoom: 7
+    advanced: {}
+  - id: coastline-z9
+    class: coastline
+    geometry: linestring
+    <<: *extents
+    Datasource:
+      file: "data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp"
+      type: shape
+    properties:
+      minzoom: 9
+      maxzoom: 9
+    advanced: {}
+  - id: coastline
+    class: coastline
+    geometry: polygon
+    <<: *extents
+    Datasource:
+      file: data/water-polygons-split-3857/water_polygons.shp
+      type: shape
+    properties:
+      minzoom: 10
     advanced: {}
   - id: landcover-area-symbols
     geometry: polygon

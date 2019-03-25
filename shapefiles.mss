@@ -16,9 +16,15 @@
 }
 
 .coastline {
-  line-width: 0.5;
-  line-color: darken(@river-color, 10%);
-  line-offset: -0.5;
+  [zoom >= 1] {
+    line-width: 0.5;
+    line-color: @river-color;
+    line-offset: 0.25;
+    [zoom >= 8] {
+      line-width: 1.0;
+      line-offset: 0.5;
+    }
+  }
 }
 
 #icesheet-poly {
