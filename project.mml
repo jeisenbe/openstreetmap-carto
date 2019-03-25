@@ -448,8 +448,8 @@ Layer:
       file: "data/coastlines-generalized-3857/coastlines_z8.shp"
       type: shape
     properties:
-      minzoom: 7
-      maxzoom: 7
+      minzoom: 8
+      maxzoom: 8
     advanced: {}
   - id: coastline-z9
     class: coastline
