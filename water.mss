@@ -30,8 +30,7 @@
   }
 
   [landuse = 'basin']::landuse {
-    [zoom >= 7][way_pixels >= 32],
-    [zoom >= 8] {
+    [zoom >= 7] {
       [int_intermittent = 'no'] {
         polygon-fill: @water-color;
         [way_pixels >= 4] {
@@ -55,10 +54,7 @@
 
   [natural = 'water'][water != 'river'][water != 'canal'][waterway != 'riverbank']::natural,
   [landuse = 'reservoir']::landuse {
-    [zoom >= 0][zoom < 1][way_pixels >= 4],
-    [zoom >= 1][zoom < 2][way_pixels >= 16],
-    [zoom >= 2][zoom < 8][way_pixels >= 32],
-    [zoom >= 8] {
+    [zoom >= 0] {
       [int_intermittent = 'no'] {
         polygon-fill: @water-color;
       }
@@ -83,8 +79,7 @@
   [natural = 'water'][water = 'river']::natural,
   [natural = 'water'][water = 'canal']::natural,
   [waterway = 'riverbank']::waterway {
-    [zoom >= 2][zoom < 6][way_pixels >= 4],
-    [zoom >= 6] {
+    [zoom >= 2] {
       [int_intermittent = 'no'] {
         polygon-fill: @river-color;
         [way_pixels >= 4] {
