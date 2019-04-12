@@ -859,19 +859,15 @@
     line-width: 0.4;
     line-color: #444;
   }
-  {feature != 'barrier_bollard'][zoom >= 17] {
-    line-width: 2;
-    line-color: #7d7c7c;
-    line-dasharray: 2,6;
+  [feature = 'barrier_bollard'][zoom >= 18] {
+    line-width: 3;
+    line-color: @barrier-dot;
+    line-dasharray: 0.01,8;
     line-join: round;
     line-cap: round;
     [zoom >= 18] {
-      line-width: 3;
-      line-dasharray: 3,18;
-    }
-    [zoom >= 19] {
       line-width: 4;
-      line-dasharray: 4,36;
+      line-dasharray: 0.01,12;
     }
   }
   [feature = 'barrier_embankment'][zoom >= 14] {

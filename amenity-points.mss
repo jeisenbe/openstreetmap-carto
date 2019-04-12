@@ -18,6 +18,7 @@
 @man-made-icon: #666666;
 @advertising-grey: @man-made-icon;
 @barrier-icon: #3f3f3f;
+@barrier-dot: #7d7c7c;
 @landform-color: #d08f55;
 @leisure-green: darken(@park, 60%);
 @aboriginal: #82643a;
@@ -1702,7 +1703,7 @@
     [zoom >= 17] {
       marker-width: 3;
       marker-line-width: 0;
-      marker-fill: #7d7c7c;
+      marker-fill: @barrier-dot;
       marker-placement: interior;
 
       [zoom >= 18] {
