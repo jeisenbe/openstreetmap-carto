@@ -860,14 +860,14 @@
     line-color: #444;
   }
   [feature = 'barrier_bollard'][zoom >= 18] {
-    line-width: 3;
-    line-color: @barrier-dot;
-    line-dasharray: 0.01,8;
-    line-join: round;
-    line-cap: round;
+    marker-width: 3;
+    marker-fill: @barrier-dot;
+    marker-line-width: 0;
+    marker-placement: line;
+    marker-spacing: 8;
     [zoom >= 18] {
-      line-width: 4;
-      line-dasharray: 0.01,12;
+      marker-width: 4;
+      marker-spacing: 12;
     }
   }
   [feature = 'barrier_embankment'][zoom >= 14] {
