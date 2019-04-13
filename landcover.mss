@@ -865,6 +865,7 @@
     marker-line-width: 0;
     marker-placement: line;
     marker-spacing: 8;
+    marker-ignore-placement: true;
     [zoom >= 18] {
       marker-width: 4;
       marker-spacing: 12;
