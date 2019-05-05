@@ -10,7 +10,8 @@ For each zoomlevel, all borders come from a single attachment, to handle
 overlapping borders correctly.
 */
 
-#admin-low-zoom[zoom < 11],
+#admin-very-low-zoom[zoom < 6],
+#admin-low-zoom[zoom >= 6][zoom < 11],
 #admin-mid-zoom[zoom >= 11][zoom < 13],
 #admin-high-zoom[zoom >= 13] {
   [admin_level = '2'] {
@@ -22,7 +23,7 @@ overlapping borders correctly.
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-join: bevel;
       line-color: @admin-boundaries;
-      [maritime = 'yes'] {
+      [maritime = 'yes'][zoom >= 6] {
         line-color: @admin-boundaries-maritime;
       }
       line-width: 1.2;
@@ -64,7 +65,7 @@ overlapping borders correctly.
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-join: bevel;
       line-color: @admin-boundaries;
-      [maritime = 'yes'] {
+      [maritime = 'yes'][zoom >= 6] {
         line-color: @admin-boundaries-maritime;
       }
       line-width: 0.6;
@@ -91,7 +92,7 @@ overlapping borders correctly.
       background/line-simplify: @admin-simplify;
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-color: @admin-boundaries;
-      [maritime = 'yes'] {
+      [maritime = 'yes'][zoom >= 6] {
         line-color: @admin-boundaries-maritime;
       }
       line-join: bevel;

@@ -253,7 +253,7 @@ Layer:
     properties:
       minzoom: 1
       maxzoom: 3
-  - id: admin-low-zoom
+  - id: admin-very-low-zoom
     geometry: linestring
     <<: *extents
     Datasource:
@@ -261,21 +261,16 @@ Layer:
       table: |-
         (SELECT
             way,
-            admin_level,
-            tags->'maritime' as maritime
+            admin_level
           FROM planet_osm_roads
           WHERE boundary = 'administrative'
             AND admin_level IN ('0', '1', '2', '3', '4')
-            AND (osm_id < 0 OR (osm_id > 0 AND tags @> 'maritime=>yes'))
-          ORDER BY admin_level DESC,
-            CASE
-              WHEN tags @> 'maritime=>yes' THEN 1
-              ELSE 0
-            END ASC
-        ) AS admin_low_zoom
+            AND osm_id < 0
+          ORDER BY admin_level DESC
+        ) AS admin_very_low_zoom
     properties:
       minzoom: 4
-      maxzoom: 10
+      maxzoom: 5
   - id: ocean-lz
     geometry: polygon
     class: ocean
@@ -1176,6 +1171,29 @@ Layer:
         ) AS aeroways
     properties:
       minzoom: 11
+  - id: admin-low-zoom
+    geometry: linestring
+    <<: *extents
+    Datasource:
+      <<: *osm2pgsql
+      table: |-
+        (SELECT
+            way,
+            admin_level,
+            tags->'maritime' as maritime
+          FROM planet_osm_roads
+          WHERE boundary = 'administrative'
+            AND admin_level IN ('0', '1', '2', '3', '4')
+            AND (osm_id < 0 OR (osm_id > 0 AND tags @> 'maritime=>yes'))
+          ORDER BY admin_level DESC,
+            CASE
+              WHEN tags @> 'maritime=>yes' THEN 1
+              ELSE 0
+            END ASC
+        ) AS admin_low_zoom
+    properties:
+      minzoom: 6
+      maxzoom: 10
   - id: admin-mid-zoom
     geometry: linestring
     <<: *extents
