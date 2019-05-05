@@ -1,5 +1,5 @@
 @admin-boundaries: #ac46ac;
-@admin-boundaries-maritime: mix(@admin-boundaries, @water-color, 35%);
+@admin-boundaries-maritime: darken(@water-color, 30%);
 
 @admin-simplify: 4;
 @admin-simplify-algorithm: visvalingam-whyatt;
