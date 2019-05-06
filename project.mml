@@ -1412,6 +1412,27 @@ Layer:
     properties:
       minzoom: 4
       maxzoom: 15
+  - id: county-names
+    class: county
+    geometry: point
+    <<: *extents
+    Datasource:
+      <<: *osm2pgsql
+      table: |-
+        (SELECT
+            way,
+            way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
+            name,
+            ref
+          FROM planet_osm_polygon
+          WHERE boundary = 'administrative'
+            AND admin_level IN ('5', '6')
+            AND name IS NOT NULL
+            AND way_area > 100*!pixel_width!::real*!pixel_height!::real
+          ORDER BY way_area DESC
+        ) AS county_names
+    properties:
+      minzoom: 9
   - id: placenames-small
     geometry: point
     <<: *extents
