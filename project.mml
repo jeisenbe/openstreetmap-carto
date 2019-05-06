@@ -1193,7 +1193,7 @@ Layer:
         ) AS admin_low_zoom
     properties:
       minzoom: 6
-      maxzoom: 10
+      maxzoom: 8
   - id: admin-mid-zoom
     geometry: linestring
     <<: *extents
@@ -1215,7 +1215,7 @@ Layer:
             END ASC
         ) AS admin_mid_zoom
     properties:
-      minzoom: 11
+      minzoom: 9
       maxzoom: 12
   - id: admin-high-zoom
     geometry: linestring
