@@ -1488,8 +1488,8 @@
     marker-fill: @airtransport;
   }
 
-  [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 14],
-  [feature = 'aeroway_aerodrome'][zoom >= 11][zoom < 14] {
+  [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 16],
+  [feature = 'aeroway_aerodrome'][zoom >= 12][zoom < 18] {
     marker-file: url('symbols/aerodrome.12.svg');
     marker-placement: interior;
     marker-clip: false;
@@ -1524,7 +1524,7 @@
     marker-clip: false;
   }
 
-  [feature = 'natural_saddle'][zoom >= 15] {
+  [feature = 'natural_saddle'][zoom >= 14] {
     marker-file: url('symbols/natural/saddle.svg');
     marker-fill: @landform-color;
     marker-placement: interior;
@@ -1539,9 +1539,8 @@
 
   [feature = 'waterway_waterfall'] {
     [zoom >= 13][height > 20],
-    [zoom >= 14][height > 10],
-    [zoom >= 15][name != null],
-    [zoom >= 16] {
+    [zoom >= 16][name != null],
+    [zoom >= 17] {
       marker-file: url('symbols/waterfall.svg');
       marker-placement: interior;
       marker-clip: false;
@@ -1996,8 +1995,8 @@
     text-placement: interior;
   }
 
-  [feature = 'natural_peak'][zoom >= 13],
-  [feature = 'natural_volcano'][zoom >= 13],
+  [feature = 'natural_peak'][zoom >= 12],
+  [feature = 'natural_volcano'][zoom >= 12],
   [feature = 'natural_saddle'][zoom >= 15],
   [feature = 'tourism_viewpoint'][zoom >= 16] {
     text-name: "[name]";
@@ -2042,10 +2041,9 @@
   }
 
   [feature = 'waterway_waterfall'] {
-    [zoom >= 13][height > 20],
-    [zoom >= 14][height > 10],
-    [zoom >= 15][name != null],
-    [zoom >= 16] {
+    [zoom >= 15][height > 20],
+    [zoom >= 16][name != null],
+    [zoom >= 17] {
       text-name: "[name]";
       text-size: @standard-font-size;
       text-wrap-width: @standard-wrap-width;
@@ -3091,8 +3089,8 @@
     text-placement: interior;
   }
 
-  [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 14],
-  [feature = 'aeroway_aerodrome'][zoom >= 11][zoom < 14],
+  [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 16],
+  [feature = 'aeroway_aerodrome'][zoom >= 12][zoom < 17],
   [feature = 'amenity_ferry_terminal'][zoom >= 15] {
     text-name: "[name]";
     text-size: @standard-font-size;
