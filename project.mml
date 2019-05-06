@@ -604,7 +604,7 @@ Layer:
           WHERE "natural" IN ('arete', 'cliff', 'ridge') OR man_made = 'embankment'
         ) AS cliffs
     properties:
-      minzoom: 13
+      minzoom: 12
   - id: area-barriers
     class: barriers
     geometry: polygon

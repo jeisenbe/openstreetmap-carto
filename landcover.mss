@@ -70,17 +70,6 @@
 
 #landcover-low-zoom[zoom < 10],
 #landcover[zoom >= 10] {
-  ::low-zoom[zoom < 10]                   { image-filters: scale-hsla(0,1,0,1,0.6,0.95,0,1); }
-  ::lower-mid-zoom[zoom >= 10][zoom < 11] { image-filters: scale-hsla(0,1,0,1,0.6,0.95,0,1); }
-  ::mid-zoom[zoom >= 11][zoom < 12]       { image-filters: scale-hsla(0,1,0,1,0.5,0.96,0,1); }
-  ::upper-mid-zoom[zoom >= 12][zoom < 13] { image-filters: scale-hsla(0,1,0,1,0.4,0.97,0,1); }
-  ::high-zoom[zoom >= 13]                 { image-filters: scale-hsla(0,1,0,1,0,  1,   0,1); }
-
-  ::low-zoom[zoom < 10],
-  ::lower-mid-zoom[zoom >= 10][zoom < 11],
-  ::mid-zoom[zoom >= 11][zoom < 12],
-  ::upper-mid-zoom[zoom >= 12][zoom < 13],
-  ::high-zoom[zoom >= 13] {
 
   [feature = 'leisure_swimming_pool'][zoom >= 14] {
     polygon-fill: @water-color;
@@ -688,7 +677,6 @@
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
 }
-}
 
 /* man_made=cutline */
 #landcover-line {
@@ -813,21 +801,21 @@
 }
 
 #cliffs {
-  [natural = 'cliff'][zoom >= 13] {
+  [natural = 'cliff'][zoom >= 12] {
     line-pattern-file: url('symbols/cliff.svg');
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-pattern-file: url('symbols/cliff2.svg');
     }
   }
-  [natural = 'ridge'][zoom >= 13] {
+  [natural = 'ridge'][zoom >= 12] {
     line-pattern-file: url('symbols/ridge-mz.svg');
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-pattern-file: url('symbols/ridge.svg');
     }
   }
-  [natural = 'arete'][zoom >= 13] {
+  [natural = 'arete'][zoom >= 12] {
     line-pattern-file: url('symbols/arete-mid.svg');
-    [zoom >= 15] {
+    [zoom >= 14] {
       line-pattern-file: url('symbols/arete-wide.svg');
     }
   }
@@ -904,9 +892,9 @@
 }
 
 #text-line {
-  [feature = 'natural_arete'][zoom >= 15],
-  [feature = 'natural_cliff'][zoom >= 15],
-  [feature = 'natural_ridge'][zoom >= 15],
+  [feature = 'natural_arete'][zoom >= 14],
+  [feature = 'natural_cliff'][zoom >= 14],
+  [feature = 'natural_ridge'][zoom >= 14],
   [feature = 'man_made_embankment'][zoom >= 15] {
     text-name: "[name]";
     text-halo-radius: @standard-halo-radius;
