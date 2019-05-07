@@ -191,7 +191,7 @@ Layer:
           WHERE waterway = 'river'
         ) AS water_lines_low_zoom
     properties:
-      minzoom: 8
+      minzoom: 7
       maxzoom: 11
   - id: water-lines
     class: water-lines

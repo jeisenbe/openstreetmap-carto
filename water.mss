@@ -106,7 +106,7 @@
 }
 
 #water-lines-low-zoom {
-  [waterway = 'river'][zoom >= 8][zoom < 12] {
+  [waterway = 'river'][zoom >= 7][zoom < 12] {
     [int_intermittent = 'yes'] {
       line-dasharray: 8,4;
       line-cap: butt;
