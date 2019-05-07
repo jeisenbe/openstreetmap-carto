@@ -1485,7 +1485,7 @@ Layer:
             END ASC, length(name) DESC, name
         ) AS placenames_small
     properties:
-      minzoom: 12
+      minzoom: 10
   - id: stations
     geometry: point
     <<: *extents

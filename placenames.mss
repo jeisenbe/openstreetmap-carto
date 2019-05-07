@@ -324,7 +324,7 @@
 }
 
 #placenames-small::suburb {
-  [place = 'suburb'][zoom >= 12][zoom < 17] {
+  [place = 'suburb'][zoom >= 11][zoom < 17] {
     text-name: "[name]";
     text-size: 11;
     text-fill: @placenames;
@@ -359,7 +359,7 @@
 
 #placenames-small::village {
   [place = 'village'] {
-    [zoom >= 12][zoom < 17] {
+    [zoom >= 11][zoom < 17] {
       text-name: "[name]";
       text-size: 10;
       text-fill: @placenames;
@@ -401,7 +401,7 @@
 
 #placenames-small::quarter {
   [place = 'quarter'] {
-    [zoom >= 14][zoom < 17] {
+    [zoom >= 13][zoom < 17] {
       text-name: "[name]";
       text-fill: @placenames;
       text-face-name: @book-fonts;
@@ -430,7 +430,7 @@
     }
   }
   [place = 'hamlet'] {
-    [zoom >= 14][zoom < 18] {
+    [zoom >= 13][zoom < 18] {
       text-name: "[name]";
       text-fill: @placenames;
       text-face-name: @book-fonts;
@@ -463,10 +463,10 @@
 }
 
 #placenames-small::neighborhood {
-  [place = 'neighbourhood'][zoom >= 15][zoom < 20],
-  [place = 'locality'][zoom >= 15],
-  [place = 'isolated_dwelling'][zoom >= 15],
-  [place = 'farm'][zoom >= 15] {
+  [place = 'neighbourhood'][zoom >= 14][zoom < 20],
+  [place = 'locality'][zoom >= 16],
+  [place = 'isolated_dwelling'][zoom >= 14],
+  [place = 'farm'][zoom >= 14] {
     text-name: "[name]";
     text-size: 10;
     text-fill: @placenames;
