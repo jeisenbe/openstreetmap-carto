@@ -63,8 +63,13 @@
       text-line-spacing: -0.6; // -0.05 em
       text-margin: 7.7; // 0.7 em
     }
-    [zoom >= 9] {
-      text-size: 14;
+    [zoom >= 8] {
+      text-size: 12;
+      text-wrap-width: 55; // 3.9 em
+      text-line-spacing: -0.7; // -0.05 em
+    }
+    [zoom >= 10] {
+      text-size: 13;
       text-wrap-width: 55; // 3.9 em
       text-line-spacing: -0.7; // -0.05 em
     }
@@ -72,8 +77,8 @@
 }
 
 .county {
-  [zoom >= 9][way_pixels > 3000][way_pixels < 196000][admin_level = '5'],
-  [zoom >= 10][way_pixels > 3000][way_pixels < 196000][admin_level = '6'] {
+  [zoom >= 8][way_pixels > 3000][way_pixels < 196000][admin_level = '5'],
+  [zoom >= 10][zoom < 15][way_pixels > 3000][way_pixels < 196000][admin_level = '6'] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: 30; // 3.0 em
@@ -84,7 +89,7 @@
     text-halo-fill: @standard-halo-fill;
     text-halo-radius: @standard-halo-radius * 1.5;
     text-placement: interior;
-    [admin_level = '5'] {
+    [admin_level = '5'][zoom >= 9] {
       text-size: 12;
       text-wrap-width: 50; // 4.5 em
       text-line-spacing: -0.6; // -0.05 em
