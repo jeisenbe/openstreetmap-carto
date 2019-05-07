@@ -152,7 +152,7 @@ overlapping borders correctly.
 
 #admin-mid-zoom[zoom >= 8][zoom < 13],
 #admin-high-zoom[zoom >= 13] {
-  [admin_level = '5'][zoom >= 9] {
+  [admin_level = '5'][zoom >= 8] {
     background/line-join: bevel;
     background/line-color: white;
     background/line-width: 2;

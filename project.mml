@@ -1215,7 +1215,7 @@ Layer:
             END ASC
         ) AS admin_mid_zoom
     properties:
-      minzoom: 9
+      minzoom: 8
       maxzoom: 12
   - id: admin-high-zoom
     geometry: linestring
@@ -1433,7 +1433,7 @@ Layer:
           ORDER BY way_area DESC
         ) AS county_names
     properties:
-      minzoom: 9
+      minzoom: 8
   - id: district-names
     class: county
     geometry: point
