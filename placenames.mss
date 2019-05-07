@@ -78,7 +78,7 @@
 
 .county {
   [zoom >= 8][way_pixels > 3000][way_pixels < 196000][admin_level = '5'],
-  [zoom >= 10][zoom < 15][way_pixels > 3000][way_pixels < 196000][admin_level = '6'] {
+  [zoom >= 10][zoom < 14][way_pixels > 3000][way_pixels < 196000][admin_level = '6'] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: 30; // 3.0 em
