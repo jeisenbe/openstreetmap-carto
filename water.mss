@@ -194,8 +194,8 @@
   [waterway = 'stream'],
   [waterway = 'ditch'],
   [waterway = 'drain'] {
-    [int_intermittent != 'yes'][zoom >= 14],
-    [zoom >= 15] {
+    [int_intermittent != 'yes'][zoom >= 13],
+    [zoom >= 14] {
       // the additional line of land color is used to provide a background for dashed casings
       [int_tunnel = 'yes'] {
         background/line-width: 2;
@@ -259,7 +259,7 @@
   }
 
   [lock != 'yes'][int_tunnel != 'yes'] {
-    [waterway = 'river'][zoom >= 13] {
+    [waterway = 'river'][zoom >= 11] {
       text-name: "[name]";
       text-size: 10;
       text-face-name: @oblique-fonts;
@@ -283,7 +283,7 @@
       text-repeat-distance: @waterway-text-repeat-distance;
     }
 
-    [waterway = 'stream'][zoom >= 15] {
+    [waterway = 'stream'][zoom >= 14] {
       text-name: "[name]";
       text-size: 10;
       text-face-name: @oblique-fonts;

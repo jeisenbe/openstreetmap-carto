@@ -2230,7 +2230,7 @@ Layer:
           ORDER BY COALESCE(layer,0)
         ) AS water_lines_text
     properties:
-      minzoom: 13
+      minzoom: 11
   - id: ferry-routes-text
     geometry: linestring
     <<: *extents
