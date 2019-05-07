@@ -1423,6 +1423,7 @@ Layer:
             way,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
             name,
+            admin_level,
             ref
           FROM planet_osm_polygon
           WHERE boundary = 'administrative'
@@ -1433,6 +1434,25 @@ Layer:
         ) AS county_names
     properties:
       minzoom: 9
+  - id: district-names
+    class: county
+    geometry: point
+    <<: *extents
+    Datasource:
+      <<: *osm2pgsql
+      table: |-
+        (SELECT
+            way,
+            10000 AS way_pixels,
+            name,
+            '6' AS admin_level,
+            ref
+          FROM planet_osm_point
+          WHERE place = 'county'
+            AND name IS NOT NULL
+        ) AS district_points
+    properties:
+      minzoom: 10
   - id: placenames-small
     geometry: point
     <<: *extents
