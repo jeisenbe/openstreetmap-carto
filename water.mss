@@ -113,8 +113,12 @@
       line-join: round;
       line-clip: false;
     }
-    line-color: @water-color;
-    line-width: 0.7;
+    line-color: @river-color;
+    line-width: 0.5;
+    [zoom < 9] {
+      line-simplify: 4
+    }
+    [zoom >= 8] { line-width: 0.8 }
     [zoom >= 9] { line-width: 1.2; }
     [zoom >= 10] { line-width: 1.6; }
   }
@@ -143,7 +147,7 @@
       }
     }
 
-    water/line-color: @water-color;
+    water/line-color: @river-color;
     water/line-width: 2;
     water/line-cap: round;
     water/line-join: round;
@@ -202,7 +206,7 @@
         background/line-color: @land-color;
       }
       water/line-width: 2;
-      water/line-color: @water-color;
+      water/line-color: @river-color;
 
       [bridge = 'yes'] {
         bridgecasing/line-color: black;
