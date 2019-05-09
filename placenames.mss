@@ -41,9 +41,19 @@
       text-line-spacing: -0.5;
     }
     [zoom >= 11] {
-      text-size: 16;
-      text-wrap-width: 65;
+      text-size: 18;
+      text-wrap-width: 70;
       text-line-spacing: -0.3;
+    }
+    [zoom >= 12] {
+      text-size: 21;
+      text-wrap-width: 80;
+      text-line-spacing: -0.1;
+    }
+    [zoom >= 13] {
+      text-size: 25;
+      text-wrap-width: 100;
+      text-line-spacing: -0.1;
     }
     text-fill: @country-labels;
     text-face-name: @book-fonts;
@@ -80,13 +90,23 @@
     }
     [zoom >= 10] {
       text-size: 13;
-      text-wrap-width: 55; // 3.9 em
+      text-wrap-width: 60; // 3.9 em
       text-line-spacing: -0.7; // -0.05 em
     }
     [zoom >= 11] {
-      text-size: 14;
-      text-wrap-width: 60;
+      text-size: 15;
+      text-wrap-width: 70;
       text-line-spacing: -0.5;
+    }
+    [zoom >= 12] {
+      text-size: 18;
+      text-wrap-width: 80;
+      text-line-spacing: -0.3;
+    }
+    [zoom >= 13] {
+      text-size: 21;
+      text-wrap-width: 90;
+      text-line-spacing: -0.3;
     }
   }
 }
@@ -122,8 +142,23 @@
       text-wrap-width: 55; // 4.5 em
       text-line-spacing: -0.4; // -0.05 em
     }
-    [admin_level = '6'][zoom >= 11] {
+    [admin_level = '5'][zoom >= 12] {
+      text-size: 15;
+      text-wrap-width: 55; // 4.5 em
+      text-line-spacing: -0.4; // -0.05 em
+    }
+    [admin_level = '5'][zoom >= 13] {
+      text-size: 18;
+      text-wrap-width: 55; // 4.5 em
+      text-line-spacing: -0.4; // -0.05 em
+    }
+    [admin_level = '6'][zoom >= 12] {
       text-size: 11;
+      text-wrap-width: 45;
+      text-line-spacing: -0.6;
+    }
+    [admin_level = '6'][zoom >= 13] {
+      text-size: 13;
       text-wrap-width: 45;
       text-line-spacing: -0.6;
     }
