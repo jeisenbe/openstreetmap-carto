@@ -69,6 +69,7 @@
 @motorway-width-z8:               1;
 @trunk-width-z8:                  1;
 @primary-width-z8:                1;
+@secondary-width-z8:              0.6;
 
 @motorway-width-z9:               1.4;
 @trunk-width-z9:                  1.4;
@@ -1142,6 +1143,11 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         [zoom >= 10] { line-width: @primary-width-z10 + 2 * @lowzoom-halo-width; }
         [zoom >= 11] { line-width: @primary-width-z11 + 2 * @lowzoom-halo-width; }
       }
+      [feature = 'highway_secondary'] {
+        [zoom >= 9] { line-width: @secondary-width-z9 + 2 * @lowzoom-halo-width; }
+        [zoom >= 10] { line-width: @secondary-width-z10 + 2 * @lowzoom-halo-width; }
+        [zoom >= 11] { line-width: @secondary-width-z11 + 2 * @lowzoom-halo-width; }
+      }
       line-color: @lowzoom-halo-color;
       line-opacity: .4;
     }
@@ -1494,14 +1500,17 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     }
 
     [feature = 'highway_secondary'] {
-      [zoom >= 9][link != 'yes'],
-      [zoom >= 10] {
+      [zoom >= 8][link != 'yes'],
+      [zoom >= 9] {
         line-color: @unimportant-road;
-        line-width: @secondary-width-z9;
+        line-width: @secondary-width-z8;
+        [zoom >= 9] {
+          line-width: @secondary-width-z9;
+          line-color: @secondary-fill;
+        }
         [zoom >= 10] { line-width: @secondary-width-z10; }
         [zoom >= 11] { line-width: @secondary-width-z11; }
         [zoom >= 12] {
-          line-color: @secondary-fill;
           line-width: @secondary-width-z12 - 2 * @secondary-casing-width-z12;
           line-cap: round;
           line-join: round;
@@ -1552,10 +1561,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         line-color: @unimportant-road;
         line-width: @tertiary-width-z10;
         [zoom >= 11] {
+          line-color: @tertiary-fill;
           line-width: @tertiary-width-z11;
         }
         [zoom >= 12] {
-          line-color: @tertiary-fill;
           line-width: @tertiary-width-z12 - 2 * @casing-width-z12;
           [zoom >= 13] { line-width: @tertiary-width-z13 - 2 * @casing-width-z13; }
           [zoom >= 14] { line-width: @tertiary-width-z14 - 2 * @casing-width-z14; }
