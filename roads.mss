@@ -1829,7 +1829,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 
     [feature = 'highway_footway'],
     [feature = 'highway_path'][bicycle != 'designated'][horse != 'designated'] {
-      [zoom >= 14][access != 'no'],
+      [zoom >= 13][access != 'no'],
       [zoom >= 15] {
         #roads-fill[zoom >= 15] {
           background/line-color: @footway-casing;
