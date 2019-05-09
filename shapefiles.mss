@@ -6,7 +6,15 @@
 }
 
 .ocean {
+  polygon-fill: @ocean-color;
+}
+
+.lakes {
   polygon-fill: @water-color;
+}
+
+.rivers {
+  polygon-fill: @river-color;
 }
 
 #icesheet-poly {
