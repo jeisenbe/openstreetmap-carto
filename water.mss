@@ -115,11 +115,6 @@
     }
     line-color: @river-color;
     line-width: 0.5;
-    [zoom < 9] {
-      line-simplify: 0.5;
-      line-simplify-algorithm: visvalingam-whyatt;
-      line-smooth: 0.5;
-    }
     [zoom >= 8] { line-width: 0.8 }
     [zoom >= 9] { line-width: 1.2; }
     [zoom >= 10] { line-width: 1.6; }
