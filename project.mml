@@ -1652,8 +1652,8 @@ Layer:
     properties:
       minzoom: 4
       maxzoom: 15
-  - id: county-names
-    class: county
+  - id: regency-district-names
+    class: regency-district
     geometry: point
     <<: *extents
     Datasource:
@@ -1670,12 +1670,12 @@ Layer:
             AND admin_level IN ('5', '6')
             AND name IS NOT NULL
             AND way_area > 100*!pixel_width!::real*!pixel_height!::real
-          ORDER BY way_area DESC
-        ) AS county_names
+          ORDER BY admin_level, way_area DESC
+        ) AS regency_district_names
     properties:
       minzoom: 8
   - id: district-names
-    class: county
+    class: regency-district
     geometry: point
     <<: *extents
     Datasource:
@@ -1683,7 +1683,7 @@ Layer:
       table: |-
         (SELECT
             way,
-            10000 AS way_pixels,
+            0 AS way_pixels,
             name,
             '6' AS admin_level,
             ref

@@ -30,10 +30,20 @@
       text-line-spacing: -1.0; // -0.08 em
       text-margin: 9.1; // 0.7 em
     }
-    [zoom >= 10] {
+    [zoom >= 8] {
       text-size: 14;
       text-wrap-width: 55; // 3.9 em
       text-line-spacing: -0.7; // -0.05 em
+    }
+    [zoom >= 10] {
+      text-size: 15;
+      text-wrap-width: 60;
+      text-line-spacing: -0.5;
+    }
+    [zoom >= 11] {
+      text-size: 16;
+      text-wrap-width: 65;
+      text-line-spacing: -0.3;
     }
     text-fill: @country-labels;
     text-face-name: @book-fonts;
@@ -73,12 +83,19 @@
       text-wrap-width: 55; // 3.9 em
       text-line-spacing: -0.7; // -0.05 em
     }
+    [zoom >= 11] {
+      text-size: 14;
+      text-wrap-width: 60;
+      text-line-spacing: -0.5;
+    }
   }
 }
 
-.county {
+.regency-district {
   [zoom >= 8][way_pixels > 3000][way_pixels < 768000][admin_level = '5'],
-  [zoom >= 10][zoom < 14][way_pixels > 3000][way_pixels < 768000][admin_level = '6'] {
+  [zoom >= 9][zoom < 13][way_pixels = 0][admin_level = '6'],
+  [zoom >= 10][way_pixels > 3000][way_pixels < 768000][admin_level = '6'],
+  [zoom >= 10][zoom < 14][way_pixels = 0][admin_level = '6'] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: 30; // 3.0 em
@@ -90,10 +107,25 @@
     text-halo-radius: @standard-halo-radius * 1.5;
     text-placement: interior;
     [admin_level = '5'][zoom >= 9] {
-      text-size: 12;
-      text-wrap-width: 50; // 4.5 em
+      text-size: 11;
+      text-wrap-width: 45; // 4.5 em
       text-line-spacing: -0.6; // -0.05 em
       text-margin: 7.7; // 0.7 em
+    }
+    [admin_level = '5'][zoom >= 10] {
+      text-size: 12;
+      text-wrap-width: 50; // 4.5 em
+      text-line-spacing: -0.5; // -0.05 em
+    }
+    [admin_level = '5'][zoom >= 11] {
+      text-size: 13;
+      text-wrap-width: 55; // 4.5 em
+      text-line-spacing: -0.4; // -0.05 em
+    }
+    [admin_level = '6'][zoom >= 11] {
+      text-size: 11;
+      text-wrap-width: 45;
+      text-line-spacing: -0.6;
     }
   }
 }
