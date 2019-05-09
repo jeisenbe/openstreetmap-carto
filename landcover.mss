@@ -707,11 +707,11 @@
     }
   }
 
-  [natural = 'sand'][zoom >= 5] {
+  [natural = 'sand'][zoom >= 8] {
     polygon-pattern-file: url('symbols/beach.png');
     polygon-pattern-alignment: global;
   }
-  [int_wetland != null][zoom >= 5] {
+  [int_wetland != null][zoom >= 9] {
     polygon-pattern-file: url('symbols/wetland.png');
     polygon-pattern-alignment: global;
   }

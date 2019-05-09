@@ -557,7 +557,7 @@ Layer:
           ORDER BY COALESCE(layer,0), way_area DESC
         ) AS landcover_area_symbols
     properties:
-      minzoom: 5
+      minzoom: 8
   - id: icesheet-outlines
     geometry: linestring
     <<: *extents
