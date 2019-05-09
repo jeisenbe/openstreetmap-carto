@@ -6,7 +6,7 @@
 
 .country {
   [zoom >= 3][zoom < 5][way_pixels > 1000],
-  [zoom >= 5][way_pixels < 360000] {
+  [zoom >= 5][way_pixels < 768000] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: 35; // 3.5 em
@@ -46,7 +46,7 @@
 
 .state {
   [zoom >= 5][zoom < 7][way_pixels > 3000],
-  [zoom >= 7][way_pixels > 3000][way_pixels < 196000] {
+  [zoom >= 7][way_pixels > 3000][way_pixels < 768000] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: 30; // 3.0 em
@@ -77,8 +77,8 @@
 }
 
 .county {
-  [zoom >= 8][way_pixels > 3000][way_pixels < 196000][admin_level = '5'],
-  [zoom >= 10][zoom < 14][way_pixels > 3000][way_pixels < 196000][admin_level = '6'] {
+  [zoom >= 8][way_pixels > 3000][way_pixels < 768000][admin_level = '5'],
+  [zoom >= 10][zoom < 14][way_pixels > 3000][way_pixels < 768000][admin_level = '6'] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: 30; // 3.0 em
