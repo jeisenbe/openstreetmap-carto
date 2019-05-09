@@ -3003,7 +3003,9 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
     }
   }
+}
 
+#roads-text-ref-minor {
   [highway = 'unclassified'],
   [highway = 'residential'] {
     [zoom >= 15] {
@@ -3013,15 +3015,15 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       [zoom >= 16] {
         text-size: 9;
       }
-      [zoom >= 18] {
-        text-size: 10;
+      [zoom >= 17] {
+        text-size: 11;
       }
 
       text-fill: #000;
       text-face-name: @book-fonts;
       text-placement: line;
       text-repeat-distance: @major-highway-text-repeat-distance;
-      text-halo-radius: 2;
+      text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-spacing: 760;
       text-clip: false;
