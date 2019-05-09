@@ -31,3 +31,9 @@
     }
   }
 }
+
+#builtup {
+  [zoom >= 7][zoom < 10] {
+    polygon-fill: #ddd;
+  }
+}
