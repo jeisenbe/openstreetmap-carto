@@ -269,16 +269,16 @@ overlapping borders correctly.
   comp-op: darken;
 }
 
-#admin-text[zoom >= 11] {
-  [admin_level = '1'][way_pixels >= 768000],
-  [admin_level = '2'][way_pixels >= 768000],
-  [admin_level = '3'][way_pixels >= 768000],
-  [admin_level = '4'][way_pixels >= 768000],
-  [zoom >= 12][admin_level = '5'][way_pixels >= 768000],
-  [zoom >= 13][admin_level = '6'][way_pixels >= 768000],
-  [zoom >= 14][admin_level = '7'][way_pixels >= 192000],
-  [zoom >= 15][admin_level = '8'][way_pixels >= 192000],
-  [zoom >= 16][way_pixels >= 192000]
+#admin-text[zoom >= 11][way_pixels >= 768000] {
+  [admin_level = '1'],
+  [admin_level = '2'],
+  [admin_level = '3'],
+  [admin_level = '4'],
+  [zoom >= 12][admin_level = '5'],
+  [zoom >= 13][admin_level = '6'],
+  [zoom >= 14][admin_level = '7'],
+  [zoom >= 15][admin_level = '8'],
+  [zoom >= 16][way_pixels >= 768000]
   [zoom >= 17] {
     text-name: "[name]";
     text-face-name: @book-fonts;
