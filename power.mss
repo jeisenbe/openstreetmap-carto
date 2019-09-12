@@ -40,6 +40,7 @@
   [power = 'tower'][zoom >= 14] {
     marker-file: url('symbols/man_made/power_tower_small.svg');
     marker-width: 3;
+    marker-fill: @power-line-color;
     [zoom >= 15] {
       marker-file: url('symbols/man_made/power_tower.svg');
       marker-width: 5;
@@ -56,10 +57,14 @@
 
   [power = 'portal'][zoom >= 16] {
     marker-file: url('symbols/man_made/power_tower_small.svg');
-    marker-width: 5;
+    marker-fill: @power-support-color;
+    marker-width: 3;
+    [zoom >= 17] {
+      marker-width: 5;
+    }
   }
 
-  [power = 'insulator'][zoom >= 16] {
+  [power = 'insulator'][zoom >= 17] {
     marker-file: url('symbols/square.svg');
     marker-fill: @power-support-color;
     marker-width: 3;
