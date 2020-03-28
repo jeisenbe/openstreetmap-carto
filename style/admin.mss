@@ -232,12 +232,12 @@ overlapping borders correctly.
   [admin_level = '5'][zoom >= 8] {
     background/line-join: bevel;
     background/line-color: white;
-    background/line-width: 0.5;
+    background/line-width: 0.6;
     background/line-simplify: @admin-simplify;
     background/line-simplify-algorithm: @admin-simplify-algorithm;
     line-join: bevel;
     line-color: @admin-boundaries;
-    line-width: 0.5;
+    line-width: 0.6;
     line-simplify: @admin-simplify;
     line-simplify-algorithm: @admin-simplify-algorithm;
     line-dasharray: 4,1.5,1.5,1.5;
@@ -277,12 +277,12 @@ overlapping borders correctly.
   [admin_level = '6'][zoom >= 10] {
     background/line-join: bevel;
     background/line-color: white;
-    background/line-width: 0.5;
+    background/line-width: 0.6;
     background/line-simplify: @admin-simplify;
     background/line-simplify-algorithm: @admin-simplify-algorithm;
     line-join: bevel;
     line-color: @admin-boundaries;
-    line-width: 0.5;
+    line-width: 0.6;
     line-simplify: @admin-simplify;
     line-simplify-algorithm: @admin-simplify-algorithm;
     line-dasharray: 4,2,2,2,2,2;
@@ -310,8 +310,7 @@ overlapping borders correctly.
       line-dasharray: 12,3,3,3,3,3;
     }
   }
-  [admin_level = '7'],
-  [admin_level = '8'] {
+  [admin_level = '7'] {
     [zoom >= 12] {
       background/line-join: bevel;
       background/line-color: white;
@@ -320,7 +319,7 @@ overlapping borders correctly.
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-join: bevel;
       line-color: @admin-boundaries;
-      line-width: 0.5;
+      line-width: 0.6;
       line-simplify: @admin-simplify;
       line-simplify-algorithm: @admin-simplify-algorithm;
       line-dasharray: 8,2,2,2,2,2,2,2;
@@ -340,6 +339,35 @@ overlapping borders correctly.
       line-dasharray: 12,3,3,3,3,3,3,3;
     }
   }
+ [admin_level = '8'] {
+    [zoom >= 12] {
+      background/line-join: bevel;
+      background/line-color: white;
+      background/line-width: 0.6;
+      background/line-simplify: @admin-simplify;
+      background/line-simplify-algorithm: @admin-simplify-algorithm;
+      line-join: bevel;
+      line-color: @admin-boundaries;
+      line-width: 0.6;
+      line-simplify: @admin-simplify;
+      line-simplify-algorithm: @admin-simplify-algorithm;
+      line-dasharray: 6,2,2,2,2,2,2,2,2,2;
+      line-clip: false;
+    }
+    [zoom >= 13] {
+      background/line-width: 0.8;
+      line-width: 0.8;
+    }
+    [zoom >= 15] {
+      background/line-width: 1.0;
+      line-width: 1.0;
+    }
+    [zoom >= 16] {
+      background/line-width: 1.2;
+      line-width: 1.2;
+      line-dasharray: 9,3,3,3,3,3,3,3,3,3;
+    }
+  }
   opacity: 0.5;
   comp-op: darken;
 }
@@ -348,43 +376,43 @@ overlapping borders correctly.
   [admin_level = '9'] {
     background/line-join: bevel;
     background/line-color: white;
-    background/line-width: 0.4;
+    background/line-width: 0.6;
     background/line-simplify: @admin-simplify;
     background/line-simplify-algorithm: @admin-simplify-algorithm;
     line-join: bevel;
     line-color: @admin-boundaries;
-    line-width: 0.4;
+    line-width: 0.6;
     line-simplify: @admin-simplify;
     line-simplify-algorithm: @admin-simplify-algorithm;
-    line-dasharray: 3,1.5,1.5,1.5,3,1.5,1.5,1.5;
+    line-dasharray: 0,3,2,2,2,2,2,2,2,3;
     line-clip: false;
     [zoom >= 15] {
-      background/line-width: 0.6;
-      line-width: 0.6;
-    }
-    [zoom >= 16] {
       background/line-width: 0.8;
       line-width: 0.8;
-    line-dasharray: 4,2,2,2,4,2,2,2;
+    }
+    [zoom >= 16] {
+      background/line-width: 1.0;
+      line-width: 1.0;
+      line-dasharray: 0,4,3,3,3,3,3,3,3,4;
     }
   }
   [admin_level = '10'][zoom >= 15] {
     background/line-join: bevel;
     background/line-color: white;
-    background/line-width: 0.4;
+    background/line-width: 0.6;
     background/line-simplify: @admin-simplify;
     background/line-simplify-algorithm: @admin-simplify-algorithm;
     line-join: bevel;
     line-color: @admin-boundaries;
-    line-width: 0.4;
+    line-width: 0.6;
     line-simplify: @admin-simplify;
     line-simplify-algorithm: @admin-simplify-algorithm;
-    line-dasharray: 1.5,1.5;
+    line-dasharray: 0,3,2,2,2,2,2,3;
     line-clip: false;
     [zoom >= 16] {
       background/line-width: 0.8;
       line-width: 0.8;
-    line-dasharray: 2,2;
+      line-dasharray: 0,4,3,3,3,3,3,4;
     }
   }
   opacity: 0.5;
