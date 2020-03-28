@@ -240,7 +240,7 @@ overlapping borders correctly.
     line-width: 0.5;
     line-simplify: @admin-simplify;
     line-simplify-algorithm: @admin-simplify-algorithm;
-    line-dasharray: 4,2,2,2;
+    line-dasharray: 4,1.5,1.5,1.5;
     line-clip: false;
     [zoom >= 9] {
       background/line-width: 0.8;
@@ -249,7 +249,7 @@ overlapping borders correctly.
     [zoom >= 10] {
       background/line-width: 1.0;
       line-width: 1.0;
-      line-dasharray: 8,2,4,2;
+      line-dasharray: 6,2,2,2;
     }
     [zoom >= 11] {
       background/line-width: 1.2;
@@ -258,7 +258,7 @@ overlapping borders correctly.
     [zoom >= 12] {
       background/line-width: 1.5;
       line-width: 1.5;
-      line-dasharray: 8,3,6,3;
+      line-dasharray: 8,2,2,2;
     }
     [zoom >= 13] {
       background/line-width: 1.8;
@@ -271,7 +271,7 @@ overlapping borders correctly.
     [zoom >= 16] {
       background/line-width: 2.5;
       line-width: 2.5;
-
+      line-dasharray: 12,3,3,3;
     }
   }
   [admin_level = '6'][zoom >= 10] {
@@ -307,7 +307,7 @@ overlapping borders correctly.
     [zoom >= 16] {
       background/line-width: 1.8;
       line-width: 1.8;
-    line-dasharray: 12,3,3,3,3,3;
+      line-dasharray: 12,3,3,3,3,3;
     }
   }
   [admin_level = '7'],
@@ -315,7 +315,7 @@ overlapping borders correctly.
     [zoom >= 12] {
       background/line-join: bevel;
       background/line-color: white;
-      background/line-width: 0.5;
+      background/line-width: 0.6;
       background/line-simplify: @admin-simplify;
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-join: bevel;
@@ -356,7 +356,7 @@ overlapping borders correctly.
     line-width: 0.4;
     line-simplify: @admin-simplify;
     line-simplify-algorithm: @admin-simplify-algorithm;
-    line-dasharray: 6,2,2,2,4,2,2,2;
+    line-dasharray: 3,1.5,1.5,1.5,3,1.5,1.5,1.5;
     line-clip: false;
     [zoom >= 15] {
       background/line-width: 0.6;
@@ -365,6 +365,7 @@ overlapping borders correctly.
     [zoom >= 16] {
       background/line-width: 0.8;
       line-width: 0.8;
+    line-dasharray: 4,2,2,2,4,2,2,2;
     }
   }
   [admin_level = '10'][zoom >= 15] {
@@ -378,11 +379,12 @@ overlapping borders correctly.
     line-width: 0.4;
     line-simplify: @admin-simplify;
     line-simplify-algorithm: @admin-simplify-algorithm;
-    line-dasharray: 2,2;
+    line-dasharray: 1.5,1.5;
     line-clip: false;
     [zoom >= 16] {
       background/line-width: 0.8;
       line-width: 0.8;
+    line-dasharray: 2,2;
     }
   }
   opacity: 0.5;
