@@ -311,7 +311,6 @@
       text-wrap-width: 30; // 3.0 em
       text-line-spacing: -1.5; // -0.15 em
       text-margin: 7.0; // 0.7 em
-      text-repeat-distance: 200;
       text-fill: @county-labels;
       text-face-name: @oblique-fonts;
       text-halo-fill: @standard-halo-fill;
