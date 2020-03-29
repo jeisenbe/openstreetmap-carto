@@ -2,6 +2,7 @@
 @placenames-light: #777777;
 @country-labels: darken(@admin-boundaries, 15%);
 @state-labels: desaturate(darken(@admin-boundaries, 5%), 20%);
+@county-labels: desaturate(@admin-boundaries, 25%);
 
 #country-names {
   [zoom >= 3][zoom < 5][way_pixels > 1000],
@@ -310,7 +311,8 @@
       text-wrap-width: 30; // 3.0 em
       text-line-spacing: -1.5; // -0.15 em
       text-margin: 7.0; // 0.7 em
-      text-fill: @state-labels;
+      text-repeat-distance: 200;
+      text-fill: @county-labels;
       text-face-name: @oblique-fonts;
       text-halo-fill: @standard-halo-fill;
       text-halo-radius: @standard-halo-radius * 1.5;

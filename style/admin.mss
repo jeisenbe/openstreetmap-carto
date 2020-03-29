@@ -396,7 +396,7 @@ overlapping borders correctly.
   comp-op: darken;
 }
 
-#admin-high-zoom[zoom >= 14] {
+#admin-high-zoom[zoom >= 13] {
   [admin_level = '9'] {
     background/line-join: bevel;
     background/line-color: white;
@@ -420,7 +420,7 @@ overlapping borders correctly.
       line-dasharray: 0,4,3,3,3,3,3,3,3,4;
     }
   }
-  [admin_level = '10'][zoom >= 15] {
+  [admin_level = '10'][zoom >= 14] {
     background/line-join: bevel;
     background/line-color: white;
     background/line-width: 0.6;
