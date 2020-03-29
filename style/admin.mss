@@ -1,4 +1,4 @@
-@admin-boundaries: #6b6c95; // Lch(47,24,292)
+@admin-boundaries: #4372a8; // Lch(47,30,272)
 
 @admin-simplify: 4;
 @admin-simplify-algorithm: visvalingam-whyatt;
