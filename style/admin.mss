@@ -1,4 +1,4 @@
-@admin-boundaries: #ac46ac;
+@admin-boundaries: #51785e;
 
 @admin-simplify: 4;
 @admin-simplify-algorithm: visvalingam-whyatt;
@@ -208,7 +208,6 @@ overlapping borders correctly.
       thin/line-dasharray: 1.5,3,1.5,1.5,1.5,3,3,3,1.5,1.5,1.5,3,1.5,0;
       thin/line-simplify: @admin-simplify;
       thin/line-simplify-algorithm: @admin-simplify-algorithm;
-
     }
     [zoom >= 13] {
       background/line-width: 4;
@@ -234,7 +233,7 @@ overlapping borders correctly.
   The SQL has `ORDER BY admin_level`, so the boundary with the lowest
   admin_level is rendered on top, and therefore the only visible boundary.
   */
-  opacity: 0.6;
+  opacity: 0.5;
   comp-op: darken;
 }
 
@@ -367,7 +366,7 @@ overlapping borders correctly.
       line-dasharray: 9,3,3,3,3,3,3,3,3,3;
     }
   }
-  opacity: 0.6;
+  opacity: 0.5;
   comp-op: darken;
 }
 
