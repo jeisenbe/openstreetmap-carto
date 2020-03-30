@@ -21,7 +21,7 @@ overlapping borders correctly.
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-join: bevel;
       line-color: @admin-boundaries;
-      line-width: 1.0;
+      line-width: 1.2;
       line-simplify: @admin-simplify;
       line-simplify-algorithm: @admin-simplify-algorithm;
     }
@@ -73,9 +73,9 @@ overlapping borders correctly.
       thin/line-width: 1.5;
     }
     [zoom >= 15] {
-      background/line-width: 9;
+      background/line-width: 8;
       line-width: 9;
-      thin/line-width: 2.0;
+      thin/line-width: 1.8;
       thin/line-dasharray: 36,3,3,3;
     }
   }
@@ -215,8 +215,8 @@ overlapping borders correctly.
       thin/line-width: 1.0;
     }
     [zoom >= 15] {
-      background/line-width: 5;
-      line-width: 5;
+      background/line-width: 4.5;
+      line-width: 4.5;
       line-dasharray: 0,4,28,4;
       thin/line-width: 1.2;
       thin/line-dasharray: 2,4,2,2,2,4,4,4,2,2,2,4,2,0;
