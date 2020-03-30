@@ -420,8 +420,8 @@ overlapping borders correctly.
   [zoom >= 12][admin_level = '6'][way_pixels >= 196000],
   [zoom >= 13][admin_level = '7'],
   [zoom >= 14][admin_level = '8'],
-  [zoom >= 16][admin_level = '9'],
-  [zoom >= 17] {
+  [zoom >= 15][admin_level = '9'],
+  [zoom >= 16] {
     text-name: "[name]";
     text-face-name: @book-fonts;
     text-fill: @state-labels;
