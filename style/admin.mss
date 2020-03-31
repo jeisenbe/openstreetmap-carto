@@ -340,12 +340,12 @@ overlapping borders correctly.
     line-join: bevel;
     line-color: @admin-boundaries;
     line-width: 1.0;
-    line-dasharray: 0,2,2,2,2,2,2,2,2,2;
+    line-dasharray: 0,3,2,2,2,2,2,2,2,3;
     line-clip: false;
     [zoom >= 15] {
       background/line-width: 1.2;
       line-width: 1.2;
-      line-dasharray: 0,3,3,2,2,3,2,2,3,3;
+      line-dasharray: 0,4,3,2,2,3,2,2,3,4;
     }
   }
   [admin_level = '10'][zoom >= 14] {
@@ -355,12 +355,12 @@ overlapping borders correctly.
     line-join: bevel;
     line-color: @admin-boundaries;
     line-width: 0.8;
-    line-dasharray: 0,2,2,2,2,2,2,2;
+    line-dasharray: 0,4,3,2,3,2,3,4;
     line-clip: false;
     [zoom >= 15] {
       background/line-width: 1;
       line-width: 1;
-      line-dasharray: 0,3,3,2,2,2,3,3;
+      line-dasharray: 0,6,3,3,2,3,3,6;
     }
   }
   opacity: 0.6;
