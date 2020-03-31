@@ -304,7 +304,7 @@ overlapping borders correctly.
     [zoom >= 15] {
       background/line-width: 1.8;
       line-width: 1.8;
-      line-dasharray: 12,2,3,2,2,2,3,2;
+      line-dasharray: 12,2,2,2,3,2,2,2;
     }
   }
  [admin_level = '8'] {
@@ -315,7 +315,7 @@ overlapping borders correctly.
       line-join: bevel;
       line-color: @admin-boundaries;
       line-width: 1;
-      line-dasharray: 6,2,3,2,2,2,2,2,3,2;
+      line-dasharray: 6,2,2,2,3,2,3,2,2,2;
       line-clip: false;
     }
     [zoom >= 13] {
